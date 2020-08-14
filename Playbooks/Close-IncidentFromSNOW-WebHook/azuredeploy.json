@@ -88,7 +88,7 @@
                             "type": "ApiConnection",
                             "inputs": {
                                 "body": {
-                                    "Value": "This Incident Closed from ServiceNow"
+                                   "Value": "This Incident Closed by  @{body('Parse_JSON')?['ClosedBy']} from ServiceNow "
                                 },
                                 "host": {
                                     "connection": {
@@ -153,13 +153,13 @@
                                 "content": "@triggerBody()",
                                 "schema": {
                                     "properties": {
+                                        "ClosedBy": {
+                                            "type": "string"
+                                        },
                                         "Description": {
                                             "type": "string"
                                         },
                                         "number": {
-                                            "type": "string"
-                                        },
-                                        "state": {
                                             "type": "string"
                                         }
                                     },
