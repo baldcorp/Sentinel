@@ -78,7 +78,7 @@
                                 },
                                 "host": {
                                     "connection": {
-                                        "name": "@parameters('$connections')['AzureSentinelConnectionName']['connectionId']"
+                                        "name": "@parameters('$connections')['azuresentinel']['connectionId']"
                                     }
                                 },
                                 "path": "/subscribe"
@@ -92,7 +92,7 @@
                             "inputs": {
                                 "host": {
                                     "connection": {
-                                        "name": "@parameters('$connections')['AzureSentinelConnectionName']['connectionId']"
+                                        "name": "@parameters('$connections')['azuresentinel']['connectionId']"
                                     }
                                 },
                                 "method": "get",
@@ -115,7 +115,7 @@
                                 },
                                 "host": {
                                     "connection": {
-                                        "name": "@parameters('$connections')['service-now_1']['connectionId']"
+                                        "name": "@parameters('$connections')['service-now']['connectionId']"
                                     }
                                 },
                                 "method": "post",
@@ -237,12 +237,12 @@
                 "parameters": {
                     "$connections": {
                        "value": {
-                            "AzureSentinelConnectionName": {
+                            "azuresentinel": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                                 "connectionName": "[variables('AzureSentinelConnectionName')]",
                                 "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azuresentinel')]"
                             },
-                            "SNOWConnectionName": {
+                            "service-now": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('SNOWConnectionName'))]",
                                 "connectionName": "[variables('SNOWConnectionName')]",
                                 "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/service-now')]"
