@@ -6,8 +6,8 @@ Author: Yaniv Shasha
 
  
 ## The above solution assembles from two parts:
-1.	Business rule in ServiceNow side that run custom JS code, when the incident close.
-2.	Logic app on Azure Sentinel side that listen to the business rule POST request.<br>
+1.	Business rule in ServiceNow side that trigger a custom JS code, on a   incident close event.
+2.	Logic app on Azure Sentinel side that listen to the business rule POST request and close the Sentinel Event.<br>
 
 
 
@@ -25,8 +25,14 @@ Author: Yaniv Shasha
 
 **Deploying the solution**:
 
+This flow assume that customer use the above logic app [found here](https://github.com/Azure/Azure-Sentinel/tree/master/Playbooks/Open-SNOW-Ticket) to export the incident into ServiceNow.
+
+The incident properties that we export from Azure sentinel into ServiceNow incident page should look like this:
+
+![Picture1](./Graphics/SNOW-Incident-View_visual.GIF)
+
 1.	Deploy the above logic APP
-2.	Copy the Http endpoint Url from the trigger part (we will need to)
+2.	Copy the Http endpoint Url from the trigger part (we will need to use in the business rule JS code)
  
 3.	On the “run query and list results” (2) authenticate with user that have log analytics read permission or Azure sentinel Reader as a minimum requirement.
 4.	On the get incident – bring a fresh ETAG (3) authenticate with AAD APP with Azure sentinel Reader, or with Managed identity with the same minimum permission.
