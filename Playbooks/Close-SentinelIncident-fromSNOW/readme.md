@@ -2,10 +2,10 @@
 
 Author: Yaniv Shasha
 
- This Logic App will act as listener to a close incident event from ServiceNow business rule and close the incident in Sentinel.
+ This Logic App will act as listener for a incident close event in ServiceNow  and will close the incident in Sentinel.
 
  
-**The above solution assembles from two parts:**
+## The above solution assembles from two parts:
 1.	Business rule in ServiceNow side that run custom JS code, when the incident close.
 2.	Logic app on Azure Sentinel side that listen to the business rule POST request.<br>
 
@@ -13,11 +13,11 @@ Author: Yaniv Shasha
 
  ![Picture0](./Graphics/diag.GIF)
 
- Deploy the Webhook listening logic app on Azure Sentinel.
+ ### After Deploying the logicApp you will see the above workflow.
 
  ![Picture1](./Graphics/playbook2_numbers.GIF)
 
-The playbook, works as follow:
+### The playbook, works as follow:
 1.	Triger when http post request hit the endpoint (1)
 2.	Get relevant properties from the ServiceNow Incident. 
 3.	Close the incident on Azure Sentinel. (4)
