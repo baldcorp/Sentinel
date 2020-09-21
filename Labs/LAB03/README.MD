@@ -105,7 +105,7 @@ In this task, you will learn to proactively investigate using Sentinel Dashboard
 7.  Take a moment to browse the workbook. This workbook addresses the problem of organizations that wish to remove insecure protocols (like NTLMv1, SMB1, wDigest and weak Kerberos ciphers) but are unable to do so for fear of breaking critical business systems. They need to remediate the sources before they can disable the protocols. And for that they need data visualization.<br>
 
 **Step 2**: Dive deeper in the Insecure Protocols Workbook to Investigate Security Data
-1.	Let’s take a look at the overview graph titled **Insecure Protocols**.
+1.	Let’s take a look at the overview graph titled **Summary of Insecure Protocols**.
 
 ![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB03/screenshots/global_insecure.png
 )<br><br>
@@ -117,8 +117,8 @@ In this task, you will learn to proactively investigate using Sentinel Dashboard
 )<br><br>
 
 **Step 3**: Understand and Manipulate the Insecure Protocol Queries Behind the Workbook<br>
-1.	On the **Insecure Protocols** workbook, scroll down to **Unsigned LDAP**. This was the most active Insecure Protocol in the estate, so it makes sense to examine it closely.
-2.	Note that by clicking on an account on the left, you may filter the Account Details to the right.
+1.	On the **Insecure Protocols** workbook, scroll down to **Insecure LDAP**. This was one of the most active Insecure Protocol in the estate, so it makes sense to examine it closely.
+2.	In the LDAP tab, note that by clicking on an account on the left, you can view more details.
 
 **Step 4**: Delve deeper in the Data Represented in the Workbook
 
