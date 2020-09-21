@@ -77,13 +77,14 @@ o	Lookup data from the last: **30 minutes**
 
 
 11. Set the Alert Threshold to ‘Generate alert when number of query results’ to **Is greater than** and the threshold to **0**
-12. Under Suppression, Set Stop running query after alert is generated after alert is generated to **On** and Stop running query for: **30 minutes**
-13. At the bottom, click Next: **Incident settings**.
+12. “Under Event grouping, leave it as **"Group all events into a single alert"**
+13. Under Suppression, Set Stop running query after alert is generated after alert is generated to **On** and Stop running query for: **30 minutes**
+14. At the bottom, click Next: **Incident settings**.
 
-14. On Create incidents from alerts triggered by this analytics rule, set to **Enabled**.
-15. Under Group related alert, triggered by this analytics rule, into incidents, set to **Enabled**.
-16. Set Limit the group to alerts created within the selected time frame to **24 Hours**.
-17. Under Group alerts triggered by this analytics rule into a single incident by, select the radio button for **Grouping alerts into a single incident if the selected entities match** and from the drop-down menu, select **Account.**
+15. On Create incidents from alerts triggered by this analytics rule, set to **Enabled**.
+16. Under Group related alert, triggered by this analytics rule, into incidents, set to **Enabled**.
+17. Set Limit the group to alerts created within the selected time frame to **24 Hours**.
+18. Under Group alerts triggered by this analytics rule into a single incident by, select the radio button for **Grouping alerts into a single incident if the selected entities match** and from the drop-down menu, select **Account.**
 
 ![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB02/screenshots/Incidentsettings.png
 )<br><br>
@@ -123,12 +124,13 @@ o	Host -> ImpactedGroup (Click **Add**)<br>
 9.	Set the Run query every to **30 minutes**
 10.	Set the Lookup data from the last to **1 hour**
 11.	Set the Alert Threshold to Generate alert when number of query results to **Is greater than** and the threshold to **0**
-12.	Set Stop running query after alert is generated to **On** and Stop running query for: **8 hours**
-13.	At the bottom, click **Next: Incident settings.**
-14.	On Create incidents from alerts triggered by this analytics rule, set to **Enabled.**
-15.	Under Group related alert, triggered by this analytics rule, into incidents, set to **Enabled.**
-16.	Set Limit the group to alerts created within the selected time frame to **24 Hours.**
-17.	Under Group alerts triggered by this analytics rule into a single incident by, select the radio button for **Grouping alerts into a single incident if the selected entities match** and from the drop-down menu, select **Account.**
+12. Under Event grouping, leave it as **“Group all events into a single alert"**
+13.	Set Stop running query after alert is generated to **On** and Stop running query for: **8 hours**
+14.	At the bottom, click **Next: Incident settings.**
+15.	On Create incidents from alerts triggered by this analytics rule, set to **Enabled.**
+16.	Under Group related alert, triggered by this analytics rule, into incidents, set to **Enabled.**
+17.	Set Limit the group to alerts created within the selected time frame to **24 Hours.**
+18.	Under Group alerts triggered by this analytics rule into a single incident by, select the radio button for **Grouping alerts into a single incident if the selected entities match** and from the drop-down menu, select **Account.**
 
 ![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB02/screenshots/Incidentsettings.png
 )<br><br>
