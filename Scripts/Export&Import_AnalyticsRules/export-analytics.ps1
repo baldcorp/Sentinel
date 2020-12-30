@@ -1,20 +1,31 @@
+
+# install Az senitnel PS module
+Install-Module -Name Az.SecurityInsights
+#connect to Senitnel tenant
+
 Login-AzAccount
-Import-Module AzSentinel
 
-#variables
+
+#define variable 
 $outputFolder = "c:\export\"
-$WorkspaceName = "ImportWorkSpaceName"
-$SubscriptionId = "6b1ceacd-xxxx-xxxx-xxxx-2078dd96fd96"
+$ResourceGroup = "cxe-yanivsh01"
+$WorkspaceName = "senitnel-main01-yanivsh"
+
+ 
+
+#get alerts 
+$alerts = Get-AzSentinelAlertRule -ResourceGroupName $ResourceGroup -WorkspaceName $WorkspaceName
+
+ 
 
 
-$alerts = Get-AzSentinelAlertRule -SubscriptionId $SubscriptionId -WorkspaceName $WorkspaceName
-
+#output alerts to folder 
 foreach ($alert in $alerts)
 {
 If($alert.enabled -eq $True -and $alert.name -ne "FusionBuiltIn" -and $alert.severity -ne "null")
 {
   
-    $outputFileName = $alert.name +".yaml"
+    $outputFileName = $alert.DisplayName +".yaml"
     $exportlocation = $outputFolder + "\" + $outputFileName
     $alert | ConvertTo-Json | Out-File $exportlocation  
 }
