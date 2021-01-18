@@ -181,7 +181,7 @@ In this playbook we will be adding a user into a group based on a Incidents.  Th
 13.	Select **When a response to an Azure Sentinel alert is triggered**
 14.	Click **New Step**
 15.	Search for **Sentinel** and click on the **Azure Sentinel** icon
-16.	Click 	“Click Alert – Get Accounts (preview)” should be now "Click **Entities – Get accounts (preview)**".
+16.	"Click **Entities – Get accounts (preview)**".
 
 ![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB02/screenshots/play01.PNG
 )<br><br>
@@ -232,6 +232,11 @@ In this playbook we will be adding a user into a group based on a Incidents.  Th
 )<br><br>
 
 40.	Click New Step, search for Azure Sentinel and select **Add comment to incident (V3)**
+
+![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB02/screenshots/commentv3.PNG
+)<br><br>
+
+
 41.	Click Incident **ARM id and select Incident ARM ID** from the flyout
 42. Click on the Incident comment field and type **"User was blocked with Conditional Access by Logic App"**
 
