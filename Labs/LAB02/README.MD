@@ -181,7 +181,7 @@ In this playbook we will be adding a user into a group based on a Incidents.  Th
 13.	Select **When a response to an Azure Sentinel alert is triggered**
 14.	Click **New Step**
 15.	Search for **Sentinel** and click on the **Azure Sentinel** icon
-16.	"Click **Entities – Get accounts (preview)**".
+16.	Click **Entities – Get accounts (preview)**.
 
 ![alt text](https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/LAB02/screenshots/play01.PNG
 )<br><br>
