@@ -1,14 +1,14 @@
 Login-AzAccount
 #variables
-$InputFolder = "c:\import\" # Input folder
-$WorkspaceName = "YourNewWorkspaceName"
-$SubscriptionId = "8f153238-xxxx-xxxx-xxxx-3043fbe50918"
+$myImportPath = "c:\import\" # Input folder
+$WorkspaceName = "my-workspace"
+$resourceGroupName = "myRG"
+$myNewRules = Get-ChildItem $myImportPath -Filter *.json
 
 
-$inputalerts = Get-ChildItem -path $InputFolder -Recurse
-
-foreach($inputalert in $inputalerts)
-{
-Import-AzSentinelAlertRule -SubscriptionId $SubscriptionId -WorkspaceName $WorkspaceName -Settings $inputalert -Verbose 
+foreach ($myNewRule in $myNewRules) {
+    $myRuleObject = Get-Content -Path $myNewRule | ConvertFrom-Json
+    New-AzSentinelAlertRule -ResourceGroupName $resourceGroupName -WorkspaceName $workspaceName `
+        -Scheduled -DisplayName $myRuleObject.DisplayName -Description $myRuleObject.Description -Query $myRuleObject.Query `
+        -QueryFrequency $myRuleObject.QueryFrequency.Ticks -QueryPeriod $myRuleObject.QueryPeriod.Ticks -Severity $myRuleObject.Severity -TriggerThreshold $myRuleObject.TriggerThreshold
 }
-
