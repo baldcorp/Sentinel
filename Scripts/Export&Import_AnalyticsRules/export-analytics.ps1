@@ -25,7 +25,7 @@ foreach ($alert in $alerts)
 If($alert.enabled -eq $True -and $alert.name -ne "FusionBuiltIn" -and $alert.severity -ne "null")
 {
   
-    $outputFileName = $alert.DisplayName +".yaml"
+    $outputFileName = $alert.DisplayName +".json"
     $exportlocation = $outputFolder + "\" + $outputFileName
     $alert | ConvertTo-Json | Out-File $exportlocation  
 }
