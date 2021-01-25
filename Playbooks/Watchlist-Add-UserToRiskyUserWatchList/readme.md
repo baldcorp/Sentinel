@@ -35,13 +35,12 @@ This playbook will add User entity to a new or exsisting watchlist.
   
 **Deploying the solution**:
 
+ ![Picture1](./Graphics/deploy1.png)
 
+1. Add the missingproperties in the ARM template deployment 
+   The Watchlist name will be also the alias name that you will use to query the data, for example 
 
-2.	In “run query and list results” (2) authenticate with user that has log analytics read permission or Azure Sentinel Reader role as a minimum requirement.
-3.	In “get incident – bring fresh ETAG” (3) authenticate to AAD APP with a user that has an Azure Sentinel Reader role, or with a Managed identity with the same permission.
-4.	On the close incident step (4) we will need to use a user that has an Azure Sentinel Responder role as the identity for 
-5.	On “add comment to incident” (5) use a user that has an Azure Sentinel Contributor account.
-
+      _GetWatchlist(**'RiskUsers'**)
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYaniv-Shasha%2FSentinel%2Fmaster%2FPlaybooks%2FWatchlist-Add-UserToRiskyUserWatchList%2Fazuredeploy.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
