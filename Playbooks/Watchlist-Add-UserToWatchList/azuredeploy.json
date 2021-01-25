@@ -7,7 +7,7 @@
     },
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "Watchlist-Add-UserToRiskyUserWatchList",
+            "defaultValue": "Watchlist-Add-UserToWatchList",
             "type": "String"
         },
                  "AzureSentinelWorkspaceName": {
