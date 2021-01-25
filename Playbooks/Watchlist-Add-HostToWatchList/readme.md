@@ -22,8 +22,8 @@ This playbook will add a Host entity to a new or existing watchlist.
 
 **The playbook, available here and presented below, works as follows:**
 1.	Manually trigger on a alert with an Host entity.
-2.	In the next step the logicApp will Get the relevant users entity from the entety list.
-3.	Create an array of the user properties 
+2.	In the next step the logicApp will Get the relevant host entity from the entety list.
+3.	Create an array of the host properties 
 4.	Create a CSV from the above array
 5.  Check if the watchlist exists, if it does, use watchlist API and append the data, if not, create a new watchlist and append the data. 
 
