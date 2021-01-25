@@ -1,16 +1,17 @@
 #  Watchlist-Add-UserToRiskyUserWatchList
 
 Author: Yaniv Shasha
+
 This playbook will add User entity to a new or exsisting watchlist.
 
  
 
 ## logical flow to use this playbook
 
-	1. The analyst finished investigate an incident one of its finding is a suspicious user entity 
+	1. The analyst finished investigate an incident one of its finding is a suspicious user entity.
 	2. The analyst wants to enter this entity  to a watchlist (can be from block list type or allowed list).
-	3. This playbook can be run an manual trigger from the full incident blade or from the investigation graph blade 
-	4. As part of the deployment you will be selected the watchlist name 
+	3. This playbook can be run an manual trigger from the full incident blade or from the investigation graph blade.
+	4. As part of the deployment you will be selected the watchlist name.
 	5. If this watchlist exist the new user entity will append (update operation), if the watchlist is not exist the playbook will create it and add the new item to it.
 
 
