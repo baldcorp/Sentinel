@@ -2,12 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
      "metadata":{
-        "comments": "This playbook will add URL entity to a new or exsisting watchlist.",
+        "comments": "This playbook will add IP entity to a new or exsisting watchlist.",
         "author": "Yaniv Shasha"
-    },
+    }, 
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "Watchlist-Add-URLToWatchList",
+            "defaultValue": "Watchlist-Add-IPToWatchList",
             "type": "String"
         },
                  "AzureSentinelWorkspaceName": {
@@ -28,7 +28,7 @@
         }
     },
     "variables": {
-"AzureSentinelConnectionName": "[concat('azuresentinel-', parameters('PlaybookName'))]"
+      "AzureSentinelConnectionName": "[concat('azuresentinel-', parameters('PlaybookName'))]"  
     },
     "resources": [
         {
@@ -191,10 +191,10 @@
                             "type": "Table",
                             "inputs": {
                                 "format": "CSV",
-                                "from": "@variables('URL')"
+                                "from": "@variables('IP')"
                             }
                         },
-                        "Entities_-_Get_URLs": {
+                        "Entities_-_Get_IPs": {
                             "runAfter": {},
                             "type": "ApiConnection",
                             "inputs": {
@@ -205,18 +205,22 @@
                                     }
                                 },
                                 "method": "post",
-                                "path": "/entities/url"
+                                "path": "/entities/ip"
                             }
                         },
                         "For_each_2": {
-                            "foreach": "@body('Entities_-_Get_URLs')?['URLs']",
+                            "foreach": "@body('Parse_JSON')",
                             "actions": {
                                 "Append_to_array_variable": {
                                     "runAfter": {},
                                     "type": "AppendToArrayVariable",
                                     "inputs": {
-                                        "name": "URL",
-                                        "value": "@items('For_each_2')"
+                                        "name": "IP",
+                                        "value": {
+                                            "CountryCode": "@{items('For_each_2')['Location']['State']}",
+                                            "IpAddress": "@{items('For_each_2')['Address']}",
+                                            "State": "@{items('For_each_2')['Location']['CountryCode']}"
+                                        }
                                     }
                                 }
                             },
@@ -229,7 +233,7 @@
                         },
                         "Number_of_Runs": {
                             "runAfter": {
-                                "Variable_Host": [
+                                "Variable_IP": [
                                     "Succeeded"
                                 ]
                             },
@@ -244,6 +248,204 @@
                                 ]
                             }
                         },
+                        "Parse_JSON": {
+                            "runAfter": {
+                                "Entities_-_Get_IPs": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('Entities_-_Get_IPs')?['IPs']",
+                                "schema": {
+                                    "properties": {
+                                        "content": {
+                                            "items": {
+                                                "properties": {
+                                                    "$id": {
+                                                        "type": "string"
+                                                    },
+                                                    "Address": {
+                                                        "type": "string"
+                                                    },
+                                                    "Location": {
+                                                        "properties": {
+                                                            "Asn": {
+                                                                "type": "integer"
+                                                            },
+                                                            "City": {
+                                                                "type": "string"
+                                                            },
+                                                            "CountryCode": {
+                                                                "type": "string"
+                                                            },
+                                                            "CountryName": {
+                                                                "type": "string"
+                                                            },
+                                                            "Latitude": {
+                                                                "type": "number"
+                                                            },
+                                                            "Longitude": {
+                                                                "type": "number"
+                                                            },
+                                                            "State": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "type": "object"
+                                                    },
+                                                    "Type": {
+                                                        "type": "array"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "$id",
+                                                    "Address",
+                                                    "Location",
+                                                    "Type"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "schema": {
+                                            "properties": {
+                                                "properties": {
+                                                    "properties": {
+                                                        "Ips": {
+                                                            "properties": {
+                                                                "items": {
+                                                                    "properties": {
+                                                                        "properties": {
+                                                                            "properties": {
+                                                                                "$id": {
+                                                                                    "properties": {
+                                                                                        "type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                },
+                                                                                "Address": {
+                                                                                    "properties": {
+                                                                                        "type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "type": "array"
+                                                                                },
+                                                                                "Location": {
+                                                                                    "properties": {
+                                                                                        "properties": {
+                                                                                            "properties": {
+                                                                                                "Asn": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "City": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "CountryCode": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "CountryName": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "Latitude": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "Longitude": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                },
+                                                                                                "State": {
+                                                                                                    "properties": {
+                                                                                                        "type": {
+                                                                                                            "type": "string"
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "type": "object"
+                                                                                                }
+                                                                                            },
+                                                                                            "type": "object"
+                                                                                        },
+                                                                                        "type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "type": "array"
+                                                                                },
+                                                                                "Type": {
+                                                                                    "properties": {
+                                                                                        "type": {
+                                                                                            "type": "string"
+                                                                                        }
+                                                                                    },
+                                                                                    "type": "object"
+                                                                                }
+                                                                            },
+                                                                            "type": "object"
+                                                                        },
+                                                                        "required": {
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "type": "array"
+                                                                        },
+                                                                        "type": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    },
+                                                                    "type": "array"
+                                                                },
+                                                                "type": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "type": "object"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                },
+                                                "type": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        },
                         "ResourceGroup": {
                             "runAfter": {
                                 "SubscriptionID": [
@@ -256,7 +458,7 @@
                                     {
                                         "name": "ResourceGroup",
                                         "type": "string",
-                                           "value": "[parameters('AzureSentinelResourceGroup')]"
+                                       "value": "[parameters('AzureSentinelResourceGroup')]"
                                     }
                                 ]
                             }
@@ -278,9 +480,9 @@
                                 ]
                             }
                         },
-                        "Variable_Host": {
+                        "Variable_IP": {
                             "runAfter": {
-                                "Entities_-_Get_URLs": [
+                                "Parse_JSON": [
                                     "Succeeded"
                                 ]
                             },
@@ -288,7 +490,7 @@
                             "inputs": {
                                 "variables": [
                                     {
-                                        "name": "URL",
+                                        "name": "IP",
                                         "type": "array"
                                     }
                                 ]
@@ -306,7 +508,7 @@
                                     {
                                         "name": "WatchlistName",
                                         "type": "string",
-                                        "value": "[parameters('WatchlistName')]"
+                                         "value": "[parameters('WatchlistName')]"
                                     }
                                 ]
                             }
@@ -323,7 +525,7 @@
                                     {
                                         "name": "WorkspaceName",
                                         "type": "string",
-                                        "value": "[parameters('AzureSentinelWorkspaceName')]"
+                                         "value": "[parameters('AzureSentinelWorkspaceName')]"
                                     }
                                 ]
                             }
@@ -348,7 +550,7 @@
                 },
                 "parameters": {
                     "$connections": {
-                       "value": {
+                        "value": {
                             "azuresentinel": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                                 "connectionName": "[variables('AzureSentinelConnectionName')]",
