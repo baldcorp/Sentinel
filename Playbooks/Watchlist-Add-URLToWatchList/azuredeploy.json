@@ -216,7 +216,9 @@
                                     "type": "AppendToArrayVariable",
                                     "inputs": {
                                         "name": "URL",
-                                        "value": "@items('For_each_2')"
+                                        "value": {
+                                            "Url": "@{items('For_each_2')['Url']}"
+                                        }
                                     }
                                 }
                             },
@@ -244,6 +246,44 @@
                                 ]
                             }
                         },
+                        "Parse_JSON": {
+                            "runAfter": {
+                                "Entities_-_Get_URLs": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('Entities_-_Get_URLs')?['URLs']",
+                                "schema": {
+                                    "properties": {
+                                        "Urls": {
+                                            "items": {
+                                                "properties": {
+                                                    "$id": {
+                                                        "type": "string"
+                                                    },
+                                                    "Type": {
+                                                        "type": "string"
+                                                    },
+                                                    "Url": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "$id",
+                                                    "Type",
+                                                    "Url"
+                                                ],
+                                                "type": "array"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "array"
+                                }
+                            }
+                        },
                         "ResourceGroup": {
                             "runAfter": {
                                 "SubscriptionID": [
@@ -256,7 +296,7 @@
                                     {
                                         "name": "ResourceGroup",
                                         "type": "string",
-                                           "value": "[parameters('AzureSentinelResourceGroup')]"
+                                        "value": "[parameters('AzureSentinelResourceGroup')]"
                                     }
                                 ]
                             }
@@ -273,14 +313,14 @@
                                     {
                                         "name": "SubscriptionID",
                                         "type": "string",
-                                        "value": "[parameters('SubscriptionID')]"
+                                       "value": "[parameters('SubscriptionID')]"
                                     }
                                 ]
                             }
                         },
                         "Variable_Host": {
                             "runAfter": {
-                                "Entities_-_Get_URLs": [
+                                "Parse_JSON": [
                                     "Succeeded"
                                 ]
                             },
@@ -306,7 +346,7 @@
                                     {
                                         "name": "WatchlistName",
                                         "type": "string",
-                                        "value": "[parameters('WatchlistName')]"
+                                       "value": "[parameters('WatchlistName')]"
                                     }
                                 ]
                             }
@@ -323,7 +363,7 @@
                                     {
                                         "name": "WorkspaceName",
                                         "type": "string",
-                                        "value": "[parameters('AzureSentinelWorkspaceName')]"
+                                         "value": "[parameters('AzureSentinelWorkspaceName')]"
                                     }
                                 ]
                             }
