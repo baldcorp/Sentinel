@@ -98,7 +98,7 @@
                                                     "objectId": "c580700e-878a-4f6d-a6dd-3f2300d4ddca"
                                                 },
                                                 "description": "csv1",
-                                                "displayName": "@variables('WatchlistName')",
+                                                "displayName": "Risk Users",
                                                 "labels": [],
                                                 "numberOfLinesToSkip": "0",
                                                 "provider": "Microsoft",
@@ -107,7 +107,7 @@
                                             }
                                         },
                                         "method": "PUT",
-                                        "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('WatchlistName')}?api-version=2019-01-01-preview"
+                                        "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('Watchlist_Name')}?api-version=2019-01-01-preview"
                                     }
                                 }
                             },
@@ -135,7 +135,7 @@
                                                                 "objectId": "c580700e-878a-4f6d-a6dd-3f2300d4ddca"
                                                             },
                                                             "description": "csv1",
-                                                            "displayName": "@variables('WatchlistName')",
+                                                            "displayName": "Risk Users",
                                                             "labels": [],
                                                             "numberOfLinesToSkip": "0",
                                                             "provider": "Microsoft",
@@ -144,7 +144,7 @@
                                                         }
                                                     },
                                                     "method": "PUT",
-                                                    "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('WatchlistName')}?api-version=2019-01-01-preview"
+                                                    "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('Watchlist_Name')}?api-version=2019-01-01-preview"
                                                 }
                                             },
                                             "Increment_variable": {
@@ -216,7 +216,9 @@
                                     "type": "AppendToArrayVariable",
                                     "inputs": {
                                         "name": "accounts",
-                                        "value": "@items('For_each_2')"
+                                        "value": {
+                                            "Name": "@{items('For_each_2')['Name']}"
+                                        }
                                     }
                                 }
                             },
@@ -226,6 +228,37 @@
                                 ]
                             },
                             "type": "Foreach"
+                        },
+                        "Parse_JSON": {
+                            "runAfter": {
+                                "Entities_-_Get_Accounts": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('Entities_-_Get_Accounts')?['Accounts']",
+                                "schema": {
+                                    "properties": {
+                                        "$id": {
+                                            "type": "string"
+                                        },
+                                        "IsDomainJoined": {
+                                            "type": "boolean"
+                                        },
+                                        "NTDomain": {
+                                            "type": "string"
+                                        },
+                                        "Name": {
+                                            "type": "string"
+                                        },
+                                        "Type": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "array"
+                                }
+                            }
                         },
                         "ResourceGroup": {
                             "runAfter": {
@@ -256,7 +289,7 @@
                                     {
                                         "name": "SubscriptionID",
                                         "type": "string",
-                                        "value": "[parameters('SubscriptionID')]"
+                                       "value": "[parameters('SubscriptionID')]"
                                     }
                                 ]
                             }
@@ -271,9 +304,9 @@
                             "inputs": {
                                 "variables": [
                                     {
-                                        "name": "WatchlistName",
+                                        "name": "Watchlist_Name",
                                         "type": "string",
-                                        "value": "[parameters('WatchlistName')]"
+                                         "value": "[parameters('WatchlistName')]"
                                     }
                                 ]
                             }
@@ -290,7 +323,7 @@
                                     {
                                         "name": "WorkspaceName",
                                         "type": "string",
-                                        "value": "[parameters('AzureSentinelWorkspaceName')]"
+                                       "value": "[parameters('AzureSentinelWorkspaceName')]"
                                     }
                                 ]
                             }
@@ -314,7 +347,7 @@
                         },
                         "Variable_Accounts": {
                             "runAfter": {
-                                "Entities_-_Get_Accounts": [
+                                "Parse_JSON": [
                                     "Succeeded"
                                 ]
                             },
@@ -340,7 +373,7 @@
                                     "type": "ManagedServiceIdentity"
                                 },
                                 "method": "GET",
-                                "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('WatchlistName')}?api-version=2019-01-01-preview"
+                                "uri": "https://management.azure.com/subscriptions/@{variables('SubscriptionID')}/resourceGroups/@{variables('ResourceGroup')}/providers/Microsoft.OperationalInsights/workspaces/@{variables('WorkspaceName')}/providers/Microsoft.SecurityInsights/watchlists/@{variables('Watchlist_Name')}?api-version=2019-01-01-preview"
                             }
                         }
                     },
@@ -348,7 +381,7 @@
                 },
                 "parameters": {
                     "$connections": {
-                       "value": {
+    "value": {
                             "azuresentinel": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                                 "connectionName": "[variables('AzureSentinelConnectionName')]",
@@ -361,4 +394,3 @@
         }
     ]
 }
-
