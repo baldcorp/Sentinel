@@ -31,6 +31,7 @@ This playbook will add a Host entity to a new or existing watchlist.
 
  ![Picture1](./Graphics/HIgh1.png)
   ![Picture1](./Graphics/HIgh2.png)
+    ![Picture1](./Graphics/HIgh3.png)
   
 **Deploying the solution**:
 
