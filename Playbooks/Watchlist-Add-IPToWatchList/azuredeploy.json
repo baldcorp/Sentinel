@@ -217,9 +217,7 @@
                                     "inputs": {
                                         "name": "IP",
                                         "value": {
-                                            "CountryCode": "@{items('For_each_2')['Location']['State']}",
-                                            "IpAddress": "@{items('For_each_2')['Address']}",
-                                            "State": "@{items('For_each_2')['Location']['CountryCode']}"
+                                            "IpAddress": "@{items('For_each_2')['Address']}"
                                         }
                                     }
                                 }
