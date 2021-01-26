@@ -1,14 +1,14 @@
-#  Watchlist-Add-URLToWatchList
+#  Watchlist-Add-IPToWatchList
 
 Author: Yaniv Shasha
 
-This playbook will add a URL entity to a new or existing watchlist.
+This playbook will add a IP entity to a new or existing watchlist.
 
  
 
 ## logical flow to use this playbook
 
-	1. The analyst finished investigating an incident one of its findings is a suspicious URL entity.
+	1. The analyst finished investigating an incident one of its findings is a suspicious IP entity.
 	2. The analyst wants to enter this entity into a watchlist (can be from block list type or allowed list).
 	3. This playbook will run as a manual trigger from the full incident blade or the investigation graph blade, or automatically.
 
@@ -21,9 +21,9 @@ This playbook will add a URL entity to a new or existing watchlist.
 
 
 **The playbook, available here and presented below, works as follows:**
-1.	Manually trigger on a alert with an URL entity.
-2.	In the next step the logicApp will Get the relevant URL entity from the entety list.
-3.	Create an array of the URL properties 
+1.	Manually trigger on a alert with an IP entity.
+2.	In the next step the logicApp will Get the relevant IP entity from the entety list.
+3.	Create an array of the IP properties 
 4.	Create a CSV from the above array
 5.  Check if the watchlist exists, if it does, use watchlist API and append the data, if not, create a new watchlist and append the data. 
 
