@@ -82,7 +82,11 @@
                                     "type": "Http",
                                     "inputs": {
                                         "authentication": {
-                                            "type": "ManagedServiceIdentity"
+                                            "audience": "https://management.azure.com",
+                                    "clientId": "",
+                                    "secret": "",
+                                    "tenant": "",
+                                    "type": "ActiveDirectoryOAuth"
                                         },
                                         "method": "GET",
                                         "uri": "https://management.azure.com/@{items('For_each_2')?['id']}/providers/Microsoft.Resources/tags/default?api-version=2021-04-01"
