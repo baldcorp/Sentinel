@@ -39,7 +39,7 @@ Pre-existing watchlist with at least one column name IpAddress
 
 ## Screenshots
 **Incident Trigger**
-![Incident Trigger](./incident-trigger/images/designerLight.png)
+![Incident Trigger](./incident-trigger/images/incidentLight.PNG)
 
 **Alert Trigger**
-![Alert Trigger](./incident-trigger/images/designerAlerttLight.png)
+![Alert Trigger](./incident-trigger/images/AlertLightPNG.PNG)
