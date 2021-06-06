@@ -7,7 +7,7 @@
     }, 
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "Watchlist-Add-IPToWatchList-IncidentTrigger",
+            "defaultValue": "Watchlist-Add-IPToWatchList-AlertTrigger",
             "type": "String"
         },
         "AzureSentinelWorkspaceName": {
@@ -155,7 +155,7 @@
                                                         }
                                                     },
                                                     "method": "put",
-                                                    "path": "/Watchlists/subscriptions/@{encodeURIComponent(triggerBody()?['workspaceInfo']?['SubscriptionId'])}/resourceGroups/@{encodeURIComponent(triggerBody()?['workspaceInfo']?['ResourceGroupName'])}/workspaces/@{encodeURIComponent(variables('WorkspaceName'))}/watchlists/@{encodeURIComponent(variables('WatchlistName'))}/watchlistItem"
+                                                    "path": "/Watchlists/subscriptions/@{encodeURIComponent(variables('SubscriptionID'))}/resourceGroups/@{encodeURIComponent(variables('ResourceGroup'))}/workspaces/@{encodeURIComponent(variables('WorkspaceName'))}/watchlists/@{encodeURIComponent(variables('WatchlistName'))}/watchlistItem"
                                                 }
                                             }
                                         }
@@ -279,17 +279,17 @@
                                         "body": "_GetWatchlist('@{variables('WatchlistName')}')\n| where IpAddress contains \"@{items('For_each')?['Address']}\"",
                                         "host": {
                                             "connection": {
-                                                "name": "@parameters('$connections')['azuremonitorlogs']['connectionId']"
+                                                "name": "@parameters('$connections')['azuremonitorlogs_1']['connectionId']"
                                             }
                                         },
                                         "method": "post",
                                         "path": "/queryData",
                                         "queries": {
-                                            "resourcegroups": "",
-                                            "resourcename": "",
-                                            "resourcetype": "",
-                                            "subscriptions": "",
-                                            "timerange": ""
+                                            "resourcegroups": "@variables('ResourceGroup')",
+                                            "resourcename": "@variables('WorkspaceName')",
+                                            "resourcetype": "Log Analytics Workspace",
+                                            "subscriptions": "@variables('SubscriptionID')",
+                                            "timerange": "timegenerted 4 hr"
                                         }
                                     }
                                 }

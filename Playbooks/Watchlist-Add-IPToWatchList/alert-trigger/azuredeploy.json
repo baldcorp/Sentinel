@@ -81,7 +81,7 @@
                         }
                     },
                     "triggers": {
-                        "When_Azure_Sentinel_incident_creation_rule_was_triggered": {
+                        "When_a_response_to_an_Azure_Sentinel_alert_is_triggered": {
                             "type": "ApiConnectionWebhook",
                             "inputs": {
                                 "body": {
@@ -92,7 +92,7 @@
                                         "name": "@parameters('$connections')['azuresentinel']['connectionId']"
                                     }
                                 },
-                                "path": "/incident-creation"
+                                "path": "/subscribe"
                             }
                         }
                     },
@@ -101,7 +101,7 @@
                             "runAfter": {},
                             "type": "ApiConnection",
                             "inputs": {
-                                "body": "@triggerBody()?['object']?['properties']?['relatedEntities']",
+                                "body": "@triggerBody()?['Entities']",
                                 "host": {
                                     "connection": {
                                         "name": "@parameters('$connections')['azuresentinel']['connectionId']"
@@ -155,7 +155,7 @@
                                                         }
                                                     },
                                                     "method": "put",
-                                                    "path": "/Watchlists/subscriptions/@{encodeURIComponent(triggerBody()?['workspaceInfo']?['SubscriptionId'])}/resourceGroups/@{encodeURIComponent(triggerBody()?['workspaceInfo']?['ResourceGroupName'])}/workspaces/@{encodeURIComponent(variables('WorkspaceName'))}/watchlists/@{encodeURIComponent(variables('WatchlistName'))}/watchlistItem"
+                                                    "path": "/Watchlists/subscriptions/@{encodeURIComponent(variables('SubscriptionID'))}/resourceGroups/@{encodeURIComponent(variables('ResourceGroup'))}/workspaces/@{encodeURIComponent(variables('WorkspaceName'))}/watchlists/@{encodeURIComponent(variables('WatchlistName'))}/watchlistItem"
                                                 }
                                             }
                                         }
@@ -285,11 +285,11 @@
                                         "method": "post",
                                         "path": "/queryData",
                                         "queries": {
-                                            "resourcegroups": "",
-                                            "resourcename": "",
-                                            "resourcetype": "",
-                                            "subscriptions": "",
-                                            "timerange": ""
+                                            "resourcegroups": "@variables('ResourceGroup')",
+                                            "resourcename": "@variables('WorkspaceName')",
+                                            "resourcetype": "Log Analytics Workspace",
+                                            "subscriptions": "@variables('SubscriptionID')",
+                                            "timerange": "timegenerted 4 hr"
                                         }
                                     }
                                 }
@@ -603,7 +603,7 @@
                     },
                     "outputs": {}
                 },
-                "parameters": {
+                 "parameters": {
                     "$connections": {
                         "value": {
                             "azuremonitorlogs": {
