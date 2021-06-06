@@ -5,19 +5,19 @@ Author: Yaniv Shasha
 This playbook will add a URL entity to a new or existing watchlist.
 
  
+## Quick Deployment
+**Deploy with incident trigger** (recommended)
 
-## logical flow to use this playbook
+After deployment, attach this playbook to an **automation rule** so it runs when the incident is created.
 
-	1. The analyst finished investigating an incident one of its findings is a suspicious URL entity.
-	2. The analyst wants to enter this entity into a watchlist (can be from block list type or allowed list).
-	3. This playbook will run as a manual trigger from the full incident blade or the investigation graph blade, or automatically.
-
-
-
- ![Picture0](./Graphics/run1.png)
-  ![Picture0](./Graphics/run2.png)
-
-
+[Learn more about automation rules](https://docs.microsoft.com/azure/sentinel/automate-incident-handling-with-automation-rules#creating-and-managing-automation-rules)
+ 
+ <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYaniv-Shasha%2FSentinel%2Fmaster%2FPlaybooks%2FWatchlist-Add-UserToWatchList%2Fincident-trigger%2Fazuredeploy.json" target="_blank">
+    <img src="https://aka.ms/deploytoazurebutton""/>
+</a>
+<a href="https://portal.azure.us/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYaniv-Shasha%2FSentinel%2Fmaster%2FPlaybooks%2FWatchlist-Add-UserToWatchList%2Fincident-trigger%2Fazuredeploy.json" target="_blank">
+<img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazuregov.png"/>
+</a>
 
 
 **The playbook, available here and presented below, works as follows:**
