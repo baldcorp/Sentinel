@@ -42,4 +42,4 @@ Pre-existing watchlist with at least one column name user
 ![Incident Trigger](./incident-trigger/images/designerLight.png)
 
 **Alert Trigger**
-![Alert Trigger](./alert-trigger/images/designerLight.png)
+![Alert Trigger](./incident-trigger/images/designerAlerttLight.png)
