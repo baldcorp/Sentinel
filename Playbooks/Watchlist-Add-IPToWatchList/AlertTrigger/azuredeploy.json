@@ -7,7 +7,7 @@
     }, 
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "Watchlist-Add-IPToWatchList",
+            "defaultValue": "Watchlist-Add-IPToWatchList-AlertTrigger",
             "type": "String"
         },
         "AzureSentinelWorkspaceName": {
