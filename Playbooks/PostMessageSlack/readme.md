@@ -39,7 +39,9 @@ Your Slack account and user credentials
 
 ## Screenshots
 **Incident Trigger**
+
 ![Incident Trigger](./incident-trigger/images/designerLight.png)
 
 **Alert Trigger**
+
 ![Alert Trigger](./incident-trigger/images/designerAlerttLight.png)
