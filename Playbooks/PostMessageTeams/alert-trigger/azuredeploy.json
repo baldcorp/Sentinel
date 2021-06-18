@@ -1,4 +1,4 @@
-  
+
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
@@ -138,11 +138,13 @@
                                 "path": "/v3/beta/teams/@{encodeURIComponent('d05ba55c-593e-4bfa-8011-26e0626b5c14')}/channels/@{encodeURIComponent('19:8e52aee721394ab78563596463c067dc@thread.skype')}/messages"
                             }
                         }
+                    
                     },
                     "outputs": {}
                 },
                 "parameters": {
                     "$connections": {
+                        "value": {
                          "azuresentinel": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                                 "connectionName": "[variables('AzureSentinelConnectionName')]",
@@ -163,5 +165,7 @@
                 }
             }
         }
+        
+        
     ]
 }
