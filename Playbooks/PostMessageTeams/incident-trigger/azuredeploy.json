@@ -66,6 +66,9 @@
         "hidden-SentinelTemplateName": "PostMessageTeams",
         "hidden-SentinelTemplateVersion": "1.0"
     },
+    "identity": {
+        "type": "SystemAssigned"
+    },
     "dependsOn": [
         "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
         "[resourceId('Microsoft.Web/connections', variables('TeamsConnectionName'))]"
