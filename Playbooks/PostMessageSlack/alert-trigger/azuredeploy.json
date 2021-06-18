@@ -62,9 +62,6 @@
                 "hidden-SentinelTemplateName": "PostMessageSlack",
                 "hidden-SentinelTemplateVersion": "1.0"
             },
-			"identity": {
-                "type": "SystemAssigned"
-            },
             "dependsOn": [
                 "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                 "[resourceId('Microsoft.Web/connections', variables('SlackConnectionName'))]"
@@ -140,12 +137,7 @@
                             "azuresentinel": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('AzureSentinelConnectionName'))]",
                                 "connectionName": "[variables('AzureSentinelConnectionName')]",
-                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azuresentinel')]",
-								"connectionProperties": {
-                                    "authentication": {
-                                        "type": "ManagedServiceIdentity"
-                                    }
-                                }
+                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/azuresentinel')]"
                             },
                             "slack": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', variables('SlackConnectionName'))]",
