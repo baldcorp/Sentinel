@@ -1,0 +1,2 @@
+Computer,RawData
+sysloger,2022-03-31T09:30:04+01:00 francois.alsid.app Tenable.ad 2 8 ALSID alsid DCSync critical TOOLS-VM 10.200.200.5 dc-vm 10.200.200.4 user=ALSID.CORP\\dcadmin source_hostname=TOOLS-VM source_ip=10.200.200.5 dc_name=dc-vm dc_ip=10.200.200.4
