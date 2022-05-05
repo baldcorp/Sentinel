@@ -86,7 +86,7 @@ Function Write-OMSLogfile {
             -method $method `
             -contentType $contentType `
             -resource $resource
-        $uri = "https://" + $customerId + ".ods.opinsights.azure.com" + $resource + "?api-version=2016-04-01"
+        $uri = "https://" + $customerId + ".ods.opinsights.azure.us" + $resource + "?api-version=2016-04-01"
 		Write-Output "LA_URI : $uri"
         $headers = @{
             "Authorization"        = $signature;
@@ -148,68 +148,14 @@ Function SendToLogA ($url, $eventsTable) {
 }
 
 # Submit the data to the API endpoint
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate_CEFevent.csv" -EventsTable "CommonSecurityLog"
-
-#Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/securityEvents.csv" -EventsTable "SecurityEvent"
+$status = SendToLogA -url "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/ingestfiles/Tenable_IO_Assets.csv" -EventsTable "Tenable_IO_Assets"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/disable_accounts.csv" -EventsTable "SigninLogs"
+$status = SendToLogA -url "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/ingestfiles/Tenable_IO_Vuln.csv" -EventsTable "Tenable_IO_Vuln"
 
 Write-Host $status
 
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/office_activity_inbox_rule.csv" -EventsTable "OfficeActivity"
+$status = SendToLogA -url "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/Labs/ingestfiles/Tenable_ad_CL.csv" -EventsTable "Tenable_ad"
 
 Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/azureActivity_adele.csv" -EventsTable "AzureActivity"
-
-Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/office_activity.csv" -EventsTable "OfficeActivity"
-
-Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/sign-in_adelete.csv" -EventsTable "SigninLogs"
-
-Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/model_evasion_detection_CL_alerts.csv" -EventsTable "OfficeActivity"
-
-Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/solarigate-beacon-umbrella.csv" -EventsTable "Cisco_Umbrella_dns"
-
-Write-Host $status
-
-$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/AuditLogs_Hunting.csv" -EventsTable "AuditLogs"
-
-Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPAppLog_CL.csv" -EventsTable "ABAPAppLog_CL"
-
-Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPAuditLog_CL.csv" -EventsTable "ABAPAuditLog_CL"
-
-#Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPChangeDocsLog_CL.csv" -EventsTable "ABAPChangeDocsLog_CL"
-
-Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPCRLog_CL.csv" -EventsTable "ABAPCRLog_CL"
-
-Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPJobLog_CL.csv" -EventsTable "ABAPJobLog_CL"
-
-Write-Host $status
-
-#$status = SendToLogA -url "https://raw.githubusercontent.com/javiersoriano/sentinel-training/main/Artifacts/Telemetry/ABAPSpoolLog_CL.csv" -EventsTable "ABAPSpoolLog_CL"
-
-Write-Host $status
-
-Start-Sleep -Seconds 540
