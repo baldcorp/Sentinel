@@ -1,0 +1,13 @@
+[
+    {
+        
+        "SourceSystem": "OpsManager",
+        "MG": "00000000-0000-0000-0000-000000000002",
+        "ManagementGroupName": "srv-sentinel-000",
+        "TimeGenerated": "4/20/2022, 11:41:57.000 AM",
+        "Computer": "workstation13",
+        "RawData": "50.47.94.136 - - [16/Mar/2021:13:41:03 +0200] \"GET /admin HTTP/1.1\" 404 961 \"-\" \"curl/7.29.0\"\n",
+        "Type": "Tomcat_CL"
+
+    }
+]
