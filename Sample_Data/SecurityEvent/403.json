@@ -220,7 +220,6 @@
     "RowKey": "",
     "StorageAccount": "",
     "AzureDeploymentID": "",
-    "AzureTableName": "",
-    "Type": "SecurityEvent"
+    "AzureTableName": ""
   }
 ]
