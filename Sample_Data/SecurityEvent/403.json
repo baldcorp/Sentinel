@@ -15,7 +15,6 @@
     "Activity": "403 - The DNS server could not create a Transmission Control Protocol (TCP) socket.",
     "SourceComputerId": "20ca974d-fade-4e11-abc4-6fc11997180a",
     "EventOriginId": "4b6f4860-4f30-4c8e-8236-eb1c572d3477",
-    "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/10/2022, 5:32:36.979 PM",
     "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
     "AccessList": "",
