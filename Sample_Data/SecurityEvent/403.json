@@ -223,7 +223,6 @@
     "StorageAccount": "",
     "AzureDeploymentID": "",
     "AzureTableName": "",
-    "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
+    "Type": "SecurityEvent"
   }
 ]
