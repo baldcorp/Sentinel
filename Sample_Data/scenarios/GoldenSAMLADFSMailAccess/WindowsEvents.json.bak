@@ -16,6 +16,7 @@
         "Activity": "412",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
         "EventOriginId": "76d12871-4344-4404-bc82-0a78925cff53",
+        "TimeCollected": "2021-08-02T13:09:50.336Z",
         "InstanceId": "00000000-0000-0000-0000-000000000000"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
@@ -35,6 +36,7 @@
         "Activity": "501 - The Desktop Window Manager is experiencing heavy resource contention.",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
         "EventOriginId": "099d331c-a760-4a26-860e-4567d70cbb4b",
+        "TimeCollected": "2021-08-02T13:09:50.336Z",
         "InstanceId": "00000000-0000-0000-0000-000000000000",
         "ClaimsName": "SIMULANDLABS\\adfsadmin"
     }, {
@@ -85,7 +87,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "2d67cfe2-b74b-41c2-b17a-b448e4a08eb1"
+        "EventOriginId": "2d67cfe2-b74b-41c2-b17a-b448e4a08eb1",
+        "TimeCollected": "2021-08-02T13:06:39.229Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -134,7 +137,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "af176896-1735-493d-9cf0-4c1ab983b629"
+        "EventOriginId": "af176896-1735-493d-9cf0-4c1ab983b629",
+        "TimeCollected": "2021-08-02T13:06:39.229Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -183,7 +187,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "692a5c76-57a7-4953-a1dc-353eb5de9681"
+        "EventOriginId": "692a5c76-57a7-4953-a1dc-353eb5de9681",
+        "TimeCollected": "2021-08-02T13:06:47.258Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -232,7 +237,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "b090d851-a222-4933-8564-4ee9dbb341e3"
+        "EventOriginId": "b090d851-a222-4933-8564-4ee9dbb341e3",
+        "TimeCollected": "2021-08-02T13:06:47.258Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -282,7 +288,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "ADFS01",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "bd2190bf-d443-4b49-8b8f-f6c7a724a4df"
+        "EventOriginId": "bd2190bf-d443-4b49-8b8f-f6c7a724a4df",
+        "TimeCollected": "2021-08-02T13:08:47.231Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -331,7 +338,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "373e2bda-04aa-480b-95ae-04c3a54f4ea4"
+        "EventOriginId": "373e2bda-04aa-480b-95ae-04c3a54f4ea4",
+        "TimeCollected": "2021-08-02T13:08:47.231Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -380,7 +388,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "d59020eb-16cd-46e9-9c88-fee2654ab7ae"
+        "EventOriginId": "d59020eb-16cd-46e9-9c88-fee2654ab7ae",
+        "TimeCollected": "2021-08-02T13:11:40.251Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -429,7 +438,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "4c9033f2-af26-4f8d-a8cd-f6eb56a046a4"
+        "EventOriginId": "4c9033f2-af26-4f8d-a8cd-f6eb56a046a4",
+        "TimeCollected": "2021-08-02T13:11:41.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -478,7 +488,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "109d83a4-db5f-4f6b-a3b3-8f84deed7aee"
+        "EventOriginId": "109d83a4-db5f-4f6b-a3b3-8f84deed7aee",
+        "TimeCollected": "2021-08-02T13:11:41.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -527,7 +538,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "e6e2911e-7f4b-4438-9575-e01bbfca8ab0"
+        "EventOriginId": "e6e2911e-7f4b-4438-9575-e01bbfca8ab0",
+        "TimeCollected": "2021-08-02T13:11:41.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -583,6 +595,7 @@
         "SubjectUserSid": "S-1-5-21-2490359158-13971675-3780420524-500",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
         "EventOriginId": "b3a1321d-7a68-4242-85d8-8e60b4f98631",
+        "TimeCollected": "2021-08-02T13:11:40.251Z",
         "timestamp": "2021-08-02T13:11:39.77Z",
         "HostCustomEntity": "DC01.simulandlabs.com",
         "AccountCustomEntity": "SIMULANDLABS\\wardog"
@@ -619,6 +632,7 @@
         "SubjectUserSid": "S-1-5-21-2490359158-13971675-3780420524-500",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
         "EventOriginId": "78d2d315-fa0e-497b-b4f0-22013af9dbf8",
+        "TimeCollected": "2021-08-02T13:11:40.251Z",
         "timestamp": "2021-08-02T13:11:39.77Z",
         "HostCustomEntity": "DC01.simulandlabs.com",
         "AccountCustomEntity": "SIMULANDLABS\\wardog"
@@ -710,7 +724,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "82a68cac-fe1a-46fa-80f1-bea1754266cf"
+        "EventOriginId": "82a68cac-fe1a-46fa-80f1-bea1754266cf",
+        "TimeCollected": "2021-08-02T13:23:48.506Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -759,7 +774,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "66d9fdeb-54e5-4f06-82ab-1bd389e390a4"
+        "EventOriginId": "66d9fdeb-54e5-4f06-82ab-1bd389e390a4",
+        "TimeCollected": "2021-08-02T13:24:12.318Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -793,6 +809,7 @@
         "SubjectUserSid": "S-1-5-21-2490359158-13971675-3780420524-500",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
         "EventOriginId": "75cef050-28c0-493a-90f0-077fb4776d17",
+        "TimeCollected": "2021-08-02T13:11:56.243Z",
         "timestamp": "2021-08-02T13:11:53.63Z",
         "HostCustomEntity": "DC01.simulandlabs.com",
         "AccountCustomEntity": "SIMULANDLABS\\wardog"
@@ -829,6 +846,7 @@
         "SubjectUserSid": "S-1-5-21-2490359158-13971675-3780420524-500",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
         "EventOriginId": "087a856d-3d17-4544-b24a-38ee4223fa1b",
+        "TimeCollected": "2021-08-02T13:13:12.291Z",
         "timestamp": "2021-08-02T13:13:11Z",
         "HostCustomEntity": "DC01.simulandlabs.com",
         "AccountCustomEntity": "SIMULANDLABS\\wardog"
@@ -865,6 +883,7 @@
         "SubjectUserSid": "S-1-5-21-2490359158-13971675-3780420524-500",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
         "EventOriginId": "dbf3f24f-f56f-4fd3-b0c5-f8aa05ff39ce",
+        "TimeCollected": "2021-08-02T13:13:12.291Z",
         "timestamp": "2021-08-02T13:13:11.003Z",
         "HostCustomEntity": "DC01.simulandlabs.com",
         "AccountCustomEntity": "SIMULANDLABS\\wardog"
@@ -916,7 +935,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "2a816c01-c3d5-40c1-b6a3-aebbdb18238e"
+        "EventOriginId": "2a816c01-c3d5-40c1-b6a3-aebbdb18238e",
+        "TimeCollected": "2021-08-02T13:11:56.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -965,7 +985,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "feb79a83-52a8-48f6-be30-8b6d885f2805"
+        "EventOriginId": "feb79a83-52a8-48f6-be30-8b6d885f2805",
+        "TimeCollected": "2021-08-02T13:11:56.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1014,7 +1035,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "d412bd3c-b079-4d4d-88f2-2257596df25c"
+        "EventOriginId": "d412bd3c-b079-4d4d-88f2-2257596df25c",
+        "TimeCollected": "2021-08-02T13:11:56.243Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1063,7 +1085,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "d3b4624b-7a64-4994-a908-4df65cfe57c0"
+        "EventOriginId": "d3b4624b-7a64-4994-a908-4df65cfe57c0",
+        "TimeCollected": "2021-08-02T13:13:12.291Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1112,7 +1135,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "46ce5b07-6510-4f51-814b-117f07419993"
+        "EventOriginId": "46ce5b07-6510-4f51-814b-117f07419993",
+        "TimeCollected": "2021-08-02T13:13:12.291Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1161,7 +1185,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "7da8bfa8-e28f-4b03-876d-353ab80e9acb"
+        "EventOriginId": "7da8bfa8-e28f-4b03-876d-353ab80e9acb",
+        "TimeCollected": "2021-08-02T13:13:21.248Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1210,7 +1235,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "5acda2d6-7a40-4a90-aa8b-14cc8cb490c3"
+        "EventOriginId": "5acda2d6-7a40-4a90-aa8b-14cc8cb490c3",
+        "TimeCollected": "2021-08-02T13:13:21.248Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1259,7 +1285,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "fe9fd7b1-ceb1-4b8d-a38f-ede9f320349f"
+        "EventOriginId": "fe9fd7b1-ceb1-4b8d-a38f-ede9f320349f",
+        "TimeCollected": "2021-08-02T13:13:21.248Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1309,7 +1336,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "ADFS01",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "2d331101-d313-4e29-8ed7-fd70dcc1495f"
+        "EventOriginId": "2d331101-d313-4e29-8ed7-fd70dcc1495f",
+        "TimeCollected": "2021-08-02T13:13:40.288Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1358,7 +1386,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "078133c8-a75b-4002-be85-6bd4c017ab0b"
+        "EventOriginId": "078133c8-a75b-4002-be85-6bd4c017ab0b",
+        "TimeCollected": "2021-08-02T13:13:40.288Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1407,7 +1436,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "6d97271b-2616-472b-882d-ac2929277147"
+        "EventOriginId": "6d97271b-2616-472b-882d-ac2929277147",
+        "TimeCollected": "2021-08-02T13:15:39.251Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1456,7 +1486,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "DC01",
         "SourceComputerId": "0c7a8afd-2d56-4cb2-8e41-8644b4f05d8c",
-        "EventOriginId": "b361b5a6-d549-469e-af88-e9b30a4917f8"
+        "EventOriginId": "b361b5a6-d549-469e-af88-e9b30a4917f8",
+        "TimeCollected": "2021-08-02T13:32:55.349Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1505,7 +1536,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
-        "EventOriginId": "6fa377f7-9697-4d8b-83b1-a4c0bc0a8a69"
+        "EventOriginId": "6fa377f7-9697-4d8b-83b1-a4c0bc0a8a69",
+        "TimeCollected": "2021-08-02T13:32:55.423Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1554,7 +1586,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
-        "EventOriginId": "ac73bd9d-d937-46d8-be0f-d4c666676fe5"
+        "EventOriginId": "ac73bd9d-d937-46d8-be0f-d4c666676fe5",
+        "TimeCollected": "2021-08-02T13:32:55.423Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1603,7 +1636,8 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
-        "EventOriginId": "74f803d7-eed4-48db-ac4a-af4760c571e7"
+        "EventOriginId": "74f803d7-eed4-48db-ac4a-af4760c571e7",
+        "TimeCollected": "2021-08-02T13:32:55.423Z"
     }, {
         "TenantId": "00000000-0000-0000-0000-000000000000",
         "SourceSystem": "OpsManager",
@@ -1652,6 +1686,7 @@
         "VirtualAccount": "%%1843",
         "WorkstationName": "-",
         "SourceComputerId": "00000000-0000-0000-0000-000000000000",
-        "EventOriginId": "66a0648b-d6cb-4771-a53f-c8d0e0bca313"
+        "EventOriginId": "66a0648b-d6cb-4771-a53f-c8d0e0bca313",
+        "TimeCollected": "2021-08-02T13:32:55.423Z"
     }
 ]
