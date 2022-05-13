@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/12/2022, 12:14:43.747 AM",
     "SourceSystem": "OpsManager",
     "Account": "WORKGROUP\\EC2AMAZ-HK672QP$",
@@ -13,11 +13,11 @@
     "EventData": "",
     "EventID": 4688,
     "Activity": "4688 - A new process has been created.",
-    "SourceComputerId": "b91dde94-2994-4858-8559-efc95abc257c",
-    "EventOriginId": "b91dde94-2994-4858-8559-efc95abc257d",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/12/2022, 12:15:17.148 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",

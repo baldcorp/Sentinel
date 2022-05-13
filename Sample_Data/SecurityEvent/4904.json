@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 3:00:23.507 AM",
     "SourceSystem": "OpsManager",
     "Account": "WORKGROUP\\IoTWebAppProxy$",
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"SubjectUserSid\">S-1-5-18</Data>\n  <Data Name=\"SubjectUserName\">IoTWebAppProxy$</Data>\n  <Data Name=\"SubjectDomainName\">WORKGROUP</Data>\n  <Data Name=\"SubjectLogonId\">0x3e7</Data>\n  <Data Name=\"AuditSourceName\">VSSAudit</Data>\n  <Data Name=\"EventSourceId\">0x3add0e</Data>\n  <Data Name=\"ProcessId\">0x6d0</Data>\n  <Data Name=\"ProcessName\">C:\\Windows\\System32\\VSSVC.exe</Data>\n</EventData>",
     "EventID": 4904,
     "Activity": "4904 - An attempt was made to register a security event source.",
-    "SourceComputerId": "4b1dd9a6-9d75-4a87-8ccc-0cd2afeb1540",
-    "EventOriginId": "1fb00eeb-a3ca-4a44-bfda-9094b732af53",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 3:00:24.983 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/soc-iot/providers/microsoft.compute/virtualmachines/iotwebappproxy"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/soc-iot/providers/microsoft.compute/virtualmachines/iotwebappproxy"
   }
 ]

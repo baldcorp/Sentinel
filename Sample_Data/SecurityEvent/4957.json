@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 3:30:12.450 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "Workstation20.seccxp.ninja",
+    "Computer": "Workstation20.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"RuleId\">CoreNet-Teredo-In</Data>\n  <Data Name=\"RuleName\">Core Networking - Teredo (UDP-In)</Data>\n  <Data Name=\"RuleAttr\">Local Port</Data>\n</EventData>",
     "EventID": 4957,
     "Activity": "4957 - Windows Firewall did not apply the following rule:",
-    "SourceComputerId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d2",
-    "EventOriginId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d3",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 3:30:33.670 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
   }
 ]

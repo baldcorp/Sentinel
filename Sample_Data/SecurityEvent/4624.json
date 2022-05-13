@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 11:40:43.990 PM",
     "SourceSystem": "OpsManager",
     "Account": "NT AUTHORITY\\SYSTEM",
@@ -14,10 +14,10 @@
     "EventID": 4624,
     "Activity": "4624 - An account was successfully logged on.",
     "SourceComputerId": "d3cc79f7-05ad-4d42-b699-8c444bde4fc1",
-    "EventOriginId": "6c2f0238-0995-4e33-b4ee-eff9ca2ee393",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 11:41:04.363 PM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 4:33:56.817 PM",
     "SourceSystem": "OpsManager",
     "Account": "NT AUTHORITY\\LOCAL SERVICE",
@@ -14,10 +14,10 @@
     "EventID": 4674,
     "Activity": "4674 - An operation was attempted on a privileged object.",
     "SourceComputerId": "3f2be97f-1f83-4552-ac90-b26aec463424",
-    "EventOriginId": "b5152be0-bc11-4c00-9967-a4a6c4b0379a",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 4:33:58.626 PM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": 16777216,
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/soc-iot/providers/microsoft.compute/virtualmachines/magellanhost"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/soc-iot/providers/microsoft.compute/virtualmachines/magellanhost"
   }
 ]

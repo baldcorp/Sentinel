@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/12/2022, 12:15:12.937 AM",
     "SourceSystem": "OpsManager",
     "Account": "SECCXP\\ADFS01$",
     "AccountType": "Machine",
-    "Computer": "ADFS01.seccxp.ninja",
+    "Computer": "ADFS01.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 13824,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"TargetUserName\">ContosoAdmin</Data>\n  <Data Name=\"TargetDomainName\">ADFS01</Data>\n  <Data Name=\"TargetSid\">S-1-5-21-2517971271-2809746462-2685436052-500</Data>\n  <Data Name=\"SubjectUserSid\">S-1-5-18</Data>\n  <Data Name=\"SubjectUserName\">ADFS01$</Data>\n  <Data Name=\"SubjectDomainName\">SECCXP</Data>\n  <Data Name=\"SubjectLogonId\">0x3e7</Data>\n  <Data Name=\"CallerProcessId\">0xbf8</Data>\n  <Data Name=\"CallerProcessName\">C:\\WindowsAzure\\GuestAgent_2.7.41491.1044_2022-02-07_202922\\WaAppAgent.exe</Data>\n</EventData>",
     "EventID": 4798,
     "Activity": "4798 - A user's local group membership was enumerated.",
-    "SourceComputerId": "20ca974d-fade-4e11-abc4-6fc11997180a",
-    "EventOriginId": "0b488962-4ba7-458f-a9b1-8096133d5f97",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/12/2022, 12:15:14.126 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
   }
 ]

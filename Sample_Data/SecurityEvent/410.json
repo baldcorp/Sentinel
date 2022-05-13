@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId":"00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 8:17:33.977 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "ADFS01.seccxp.ninja",
+    "Computer": "ADFS01.contoso.ninja",
     "EventSourceName": "AD FS Auditing",
     "Channel": "Security",
     "Task": 3,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data>5888eca4-edad-45c6-9bc9-cc7236c9bbb1</Data>\n  <Data>X-MS-Client-Application</Data>\n  <Data>-</Data>\n  <Data>X-MS-Client-User-Agent</Data>\n  <Data>-</Data>\n  <Data>client-request-id</Data>\n  <Data>-</Data>\n  <Data>X-MS-Endpoint-Absolute-Path</Data>\n  <Data>/adfs/ls/</Data>\n  <Data>X-MS-Forwarded-Client-IP</Data>\n  <Data>-</Data>\n  <Data>X-MS-Proxy</Data>\n  <Data>AzureAD-Application-Proxy</Data>\n  <Data>X-MS-ADFS-Proxy-Client-IP</Data>\n  <Data>-</Data>\n</EventData>",
     "EventID": 410,
     "Activity": "410 - The DNS server list of restricted interfaces does not contain a valid IP address for the server computer.",
-    "SourceComputerId": "20ca974d-fade-4e11-abc4-6fc11997180a",
-    "EventOriginId": "710d14b6-1530-4631-b650-cf3c9371c241",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 8:18:03.509 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
   }
 ]

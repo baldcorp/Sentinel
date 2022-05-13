@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 10:32:41.867 PM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "ADFS01.seccxp.ninja",
+    "Computer": "ADFS01.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 13571,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"ProfileChanged\">All</Data>\n  <Data Name=\"RuleId\">4aa7ecea-e2bf-45c5-a7a4-96b8b8d413c1</Data>\n  <Data Name=\"RuleName\">Inbound service restriction rule for WinDefend</Data>\n</EventData>",
     "EventID": 4948,
     "Activity": "4948 - A change has been made to Windows Firewall exception list. A rule was deleted.",
-    "SourceComputerId": "20ca974d-fade-4e11-abc4-6fc11997180a",
-    "EventOriginId": "208163ad-160a-4b33-a9eb-1a661601013d",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 10:32:42.574 PM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
   }
 ]

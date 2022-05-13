@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/12/2022, 12:18:47.250 AM",
     "SourceSystem": "OpsManager",
     "Account": "SECCXP\\DC01$",
     "AccountType": "Machine",
-    "Computer": "DC01.seccxp.ninja",
+    "Computer": "DC01.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 12803,
@@ -14,10 +14,10 @@
     "EventID": 4661,
     "Activity": "4661 - A handle to an object was requested.",
     "SourceComputerId": "d3cc79f7-05ad-4d42-b699-8c444bde4fc1",
-    "EventOriginId": "036f063a-8777-4106-9bf8-3fdc1316d322",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/12/2022, 12:18:48.401 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "%%1537 \t\t\t\t%%1538 \t\t\t\t%%1539 \t\t\t\t%%1540 \t\t\t\t%%5392 \t\t\t\t%%5394 \t\t\t\t%%5395 \t\t\t\t%%5396 \t\t\t\t%%5397 \t\t\t\t%%5398 \t\t\t\t%%5399 \t\t\t\t%%5400",
     "AccessMask": "0xf01fd",
     "AccessReason": "-",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
   }
 ]

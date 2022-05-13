@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 6:31:37.177 PM",
     "SourceSystem": "OpsManager",
     "Account": "WORKGROUP\\EC2AMAZ-HK672QP$",
@@ -14,10 +14,10 @@
     "EventID": 4700,
     "Activity": "4700 - A scheduled task was enabled.",
     "SourceComputerId": "be71a2cf-5bbe-4000-8f3b-0f6fe60570e5",
-    "EventOriginId": "ea71181f-406a-4b5b-aebf-0f2444ee4588",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 6:31:49.698 PM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/soc-arc/providers/microsoft.hybridcompute/machines/ec2amaz-hk672qp"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/soc-arc/providers/microsoft.hybridcompute/machines/ec2amaz-hk672qp"
   }
 ]

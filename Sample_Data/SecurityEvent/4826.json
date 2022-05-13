@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 3:52:03.907 AM",
     "SourceSystem": "OpsManager",
     "Account": "-\\-",
     "AccountType": "Machine",
-    "Computer": "Workstation6.seccxp.ninja",
+    "Computer": "Workstation6.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 13573,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"SubjectUserSid\">S-1-5-18</Data>\n  <Data Name=\"SubjectUserName\">-</Data>\n  <Data Name=\"SubjectDomainName\">-</Data>\n  <Data Name=\"SubjectLogonId\">0x3e7</Data>\n  <Data Name=\"LoadOptions\">-</Data>\n  <Data Name=\"AdvancedOptions\">%%1843</Data>\n  <Data Name=\"ConfigAccessPolicy\">%%1846</Data>\n  <Data Name=\"RemoteEventLogging\">%%1843</Data>\n  <Data Name=\"KernelDebug\">%%1843</Data>\n  <Data Name=\"VsmLaunchType\">%%1848</Data>\n  <Data Name=\"TestSigning\">%%1843</Data>\n  <Data Name=\"FlightSigning\">%%1843</Data>\n  <Data Name=\"DisableIntegrityChecks\">%%1843</Data>\n  <Data Name=\"HypervisorLoadOptions\">-</Data>\n  <Data Name=\"HypervisorLaunchType\">%%1848</Data>\n  <Data Name=\"HypervisorDebug\">%%1843</Data>\n</EventData>",
     "EventID": 4826,
     "Activity": "4826 - Boot Configuration Data loaded.",
-    "SourceComputerId": "3bb0eec6-a665-4680-a559-f139209ccc00",
-    "EventOriginId": "55ffdd3d-2752-4f5e-bd88-f3de2d51a8cc",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 3:58:20.817 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation6"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation6"
   }
 ]

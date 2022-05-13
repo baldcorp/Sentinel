@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/7/2022, 4:39:39.223 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "Workstation20.seccxp.ninja",
+    "Computer": "Workstation20.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"ProfileChanged\">All</Data>\n  <Data Name=\"RuleId\">{936FF9F0-4C98-4CDB-9E98-3584F1BFEEB2}</Data>\n  <Data Name=\"RuleName\">98720a9b-69a7-4b08-82fe-f565fed7ca8e</Data>\n</EventData>",
     "EventID": 4947,
     "Activity": "4947 - A change has been made to Windows Firewall exception list. A rule was modified.",
-    "SourceComputerId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d2",
-    "EventOriginId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d3",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/7/2022, 4:39:53.530 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
   }
 ]

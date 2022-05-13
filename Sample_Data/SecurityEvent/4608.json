@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId":"00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 3:52:08.720 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "Workstation6.seccxp.ninja",
+    "Computer": "Workstation6.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 12288,
@@ -17,7 +17,7 @@
     "EventOriginId": "386272c2-165c-4ab7-b2d4-b5a1bde22e20",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 3:58:20.817 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-8ecf8077-xxxx-xxxx-xxxx-14040956f35d",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation6"
+    "_ResourceId": "/subscriptions/d1d8779d-xxxx-xxxx-xxxx-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation6"
   }
 ]

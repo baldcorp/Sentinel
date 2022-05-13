@@ -1,6 +1,6 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId":"00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/8/2022, 12:11:47.057 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data>b64393a2-04f7-4e82-852b-2ad577eedec4</Data>\n  <Data>-</Data>\n  <Data>http://schemas.microsoft.com/idfx/keytype/bearer</Data>\n  <Data>http://schemas.microsoft.com/idfx/requesttype/issue</Data>\n  <Data>-</Data>\n  <Data>-</Data>\n</EventData>",
     "EventID": 431,
     "Activity": 431,
-    "SourceComputerId": "20ca974d-fade-4e11-abc4-6fc11997180a",
-    "EventOriginId": "963cc909-197b-4a58-a4c4-3e92e6016716",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "963cc90900000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/8/2022, 12:12:14.338 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/adfs01"
   }
 ]

@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/11/2022, 3:25:54.050 AM",
     "SourceSystem": "OpsManager",
     "Account": "SECCXP\\Workstation20$",
     "AccountType": "Machine",
-    "Computer": "Workstation20.seccxp.ninja",
+    "Computer": "Workstation20.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"SubjectUserSid\">S-1-5-18</Data>\n  <Data Name=\"SubjectUserName\">Workstation20$</Data>\n  <Data Name=\"SubjectDomainName\">SECCXP</Data>\n  <Data Name=\"SubjectLogonId\">0x3e7</Data>\n  <Data Name=\"TransactionId\">{8d6ade02-d046-11ec-b6a5-000d3a9ddebf}</Data>\n  <Data Name=\"NewState\">48</Data>\n  <Data Name=\"ResourceManager\">{6e443d94-9ac6-11ec-84ae-000d3a4292f7}</Data>\n  <Data Name=\"ProcessId\">0x2020</Data>\n  <Data Name=\"ProcessName\">C:\\Windows\\WinSxS\\amd64_microsoft-windows-servicingstack_31bf3856ad364e35_10.0.19041.1613_none_7df538047ca074bb\\TiWorker.exe</Data>\n</EventData>",
     "EventID": 4985,
     "Activity": "4985 - The state of a transaction has changed.",
-    "SourceComputerId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d2",
-    "EventOriginId": "4f09bae2-4803-4aa4-8b80-0e2ea66218d3",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/11/2022, 3:26:14.414 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/workstation20"
   }
 ]

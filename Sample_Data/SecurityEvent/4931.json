@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/12/2022, 12:58:34.167 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "DC01.seccxp.ninja",
+    "Computer": "DC01.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 14083,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"DestinationDRA\">26d6968a-cbcb-4cc1-b731-415a4153598c._msdcs.seccxp.ninja</Data>\n  <Data Name=\"SourceDRA\">CN=NTDS Settings,CN=DC01,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=seccxp,DC=ninja</Data>\n  <Data Name=\"SourceAddr\">-</Data>\n  <Data Name=\"NamingContext\">DC=seccxp,DC=ninja</Data>\n  <Data Name=\"Options\">23</Data>\n  <Data Name=\"StatusCode\">0</Data>\n</EventData>",
     "EventID": 4931,
     "Activity": "4931 - An Active Directory replica destination naming context was modified.",
-    "SourceComputerId": "d3cc79f7-05ad-4d42-b699-8c444bde4fc1",
-    "EventOriginId": "11ca018f-c8ca-40e1-8820-5e49e78a5deb",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/12/2022, 12:58:49.459 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
   }
 ]

@@ -1,11 +1,11 @@
 [
   {
-    "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
+    "TenantId": "00000000-0000-0000-0000-000000000000",
     "TimeGenerated": "5/12/2022, 12:14:49.830 AM",
     "SourceSystem": "OpsManager",
     "Account": "",
     "AccountType": "",
-    "Computer": "DC01.seccxp.ninja",
+    "Computer": "DC01.contoso.ninja",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 14339,
@@ -13,11 +13,11 @@
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"TargetUserName\">SIMULANDWAP$</Data>\n  <Data Name=\"TargetDomainName\">SECCXP.NINJA</Data>\n  <Data Name=\"TargetSid\">S-1-5-21-2769934187-2433420870-601450644-1601</Data>\n  <Data Name=\"ServiceName\">krbtgt</Data>\n  <Data Name=\"ServiceSid\">S-1-5-21-2769934187-2433420870-601450644-502</Data>\n  <Data Name=\"TicketOptions\">0x40810010</Data>\n  <Data Name=\"Status\">0x0</Data>\n  <Data Name=\"TicketEncryptionType\">0x12</Data>\n  <Data Name=\"PreAuthType\">2</Data>\n  <Data Name=\"IpAddress\">::ffff:192.168.2.10</Data>\n  <Data Name=\"IpPort\">65129</Data>\n  <Data Name=\"CertIssuerName\"></Data>\n  <Data Name=\"CertSerialNumber\"></Data>\n  <Data Name=\"CertThumbprint\"></Data>\n</EventData>",
     "EventID": 4768,
     "Activity": "4768 - A Kerberos authentication ticket (TGT) was requested.",
-    "SourceComputerId": "d3cc79f7-05ad-4d42-b699-8c444bde4fc1",
-    "EventOriginId": "4b0937c5-8ec7-4b6f-9b1e-6ca4d99cfcb3",
+    "SourceComputerId": "00000000-0000-0000-0000-000000000000",
+    "EventOriginId": "00000000-0000-0000-0000-000000000000",
     "MG": "00000000-0000-0000-0000-000000000001",
     "TimeCollected": "5/12/2022, 12:15:14.393 AM",
-    "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
+    "ManagementGroupName": "AOI-00000000-0000-0000-0000-000000000000",
     "AccessList": "",
     "AccessMask": "",
     "AccessReason": "",
@@ -224,6 +224,6 @@
     "AzureDeploymentID": "",
     "AzureTableName": "",
     "Type": "SecurityEvent",
-    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
+    "_ResourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/simuland/providers/microsoft.compute/virtualmachines/dc01"
   }
 ]
