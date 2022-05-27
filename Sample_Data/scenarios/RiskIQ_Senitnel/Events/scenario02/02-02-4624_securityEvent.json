@@ -33,7 +33,7 @@
     "LogonTypeName": "10 - RemoteInteractive",
     "Process": "svchost.exe",
     "ProcessId": "0x61c",
-    "ProcessName": "C:\Windows\System32\svchost.exe",
+    "ProcessName": "C:\\Windows\\System32\\svchost.exe",
     "SubjectAccount": "-\\-",
     "SubjectDomainName": "-",
     "SubjectLogonId": "0x3e7",
