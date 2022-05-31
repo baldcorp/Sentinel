@@ -19,7 +19,7 @@
     "TimeCollected [Local Time]": "5/31/2022, 4:20:49.834 PM",
     "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
     "Type": "SecurityEvent",
-    "_ResourceId": ""
+     "_ResourceId": "/subscriptions/xxxxxxxxxxxxxxxxxxxxxxxx/resourcegroups/xxxxxxx/providers/microsoft.compute/virtualmachines/workstation20"
 
   }
 ]
