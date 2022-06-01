@@ -3,7 +3,7 @@
     "TenantId": "8ecf8077-cf51-xxxx-xxxx-14040956f35d",
     "TimeGenerated [Local Time]": "5/31/2022, 4:20:34.293 PM",
     "SourceSystem": "OpsManager",
-    "Account": "",
+    "Account": "adelevan@seccxp.ninja",
     "AccountType": "",
     "Computer": "Workstation20.seccxp.ninja",
     "EventSourceName": "Microsoft-Windows-Eventlog",
