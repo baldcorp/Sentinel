@@ -9,7 +9,7 @@
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
-    "MemberName"":"-",
+    "MemberName":"-",
     "Level": 0,
     "EventData": "<EventData xmlns=\"http://schemas.microsoft.com/win/2004/08/events/event\">\n  <Data Name=\"MemberName\">-</Data>\n  <Data Name=\"MemberSid\">S-1-5-21-2769934187-2433420870-601450644-500</Data>\n  <Data Name=\"TargetUserName\">Administrators</Data>\n  <Data Name=\"TargetDomainName\">Builtin</Data>\n  <Data Name=\"TargetSid\">S-1-5-32-544</Data>\n  <Data Name=\"SubjectUserSid\">S-1-5-21-2565268495-1715176848-2728839750-500</Data>\n  <Data Name=\"SubjectUserName\">Contosoadmin</Data>\n  <Data Name=\"SubjectDomainName\">ADFS03</Data>\n  <Data Name=\"SubjectLogonId\">0x2046eb</Data>\n  <Data Name=\"PrivilegeList\">-</Data>\n</EventData>",
     "EventID": 4732,
