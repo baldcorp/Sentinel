@@ -1,7 +1,7 @@
 [
   {
     "EventOriginalType": 263,
-    "TimeGenerated": "6/20/2022, 11:37:55.820 AM",
+    "TimeGenerated [Jerusalem]": "6/20/2022, 11:37:55.820 PM",
     "EventCount": 1,
     "EventType": "Update",
     "EventSubType": "request",
@@ -10,20 +10,20 @@
     "EventProduct": "Microsoft DNS Server",
     "EventVendor": "Microsoft",
     "DvcIpAddr": "10.0.3.31",
-    "DvcHostname": "Dc01.contoso.com",
-    "DvcDomain": "Dc01.contoso.com",
+    "DvcHostname": "Eyal-DNS-Machin",
+    "DvcDomain": "EyalDomain.local",
     "DvcDomainType": "FQDN",
     "DvcOs": "Windows",
     "DvcOsVersion": "10.0.14393.0",
     "AdditionalFields": {},
     "SrcIpAddr": "10.0.3.31",
     "SrcPortNumber": 58508,
-    "DstIpAddr": "3.134.143.128",
-    "DnsQuery": "cryptonight.net"
+    "DstIpAddr": "10.0.3.31",
+    "DnsQuery": "EyalDomain.local"
   },
   {
     "EventOriginalType": 264,
-    "TimeGenerated": "6/20/2022, 11:37:55.820 AM",
+    "TimeGenerated [Jerusalem]": "6/20/2022, 11:37:55.820 PM",
     "EventCount": 1,
     "EventType": "Update",
     "EventSubType": "response",
