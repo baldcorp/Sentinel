@@ -41,7 +41,7 @@
     "SrcIpAddr": "10.0.3.31",
     "SrcPortNumber": "",
     "DstIpAddr": "10.0.3.31",
-    "DnsQuery": "EyalDomain.local"
+    "DnsQuery": "cryptonight.net"
   },
   {
     "EventOriginalType": 262,
