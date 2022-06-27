@@ -32,7 +32,7 @@ We ingested a security event called "1102 - The audit log was cleared" that will
 
 #### High-level diagram of the solution:
 
-![watchlists](../Image/Highlevel.png)
+![watchlists](./image/Highlevel.png)
 
  - The solution uses Azure Workbook as the presentation layer. On this area users will be pointing the input file and define the transformation.
 - Ingestion engine - we use Azure automation accounts, one for the ingestion itself, and the other for scheduling queues. 
