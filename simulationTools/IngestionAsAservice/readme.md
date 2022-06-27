@@ -16,17 +16,17 @@ We can use this solution to ingest data on demand into the above-mentioned table
 
 This tool can be used to address the following business use cases:
 
-1.	Detection simulation – Microsoft Sentinel is Search base SIEM, meaning that after the raw events ingested into the system, the detection engine uses KQL query logic on these logs and if we it has a match, incident and alert are created. with this new tool the detection engineers will be able to ingest security data and use transformation to control the entities and the fields that will expose in the detection and use it to check if the built-in detection or newly created detection works as expected.
+1.Detection simulation – Microsoft Sentinel is Search base SIEM, meaning that after the raw events ingested into the system, the detection engine uses KQL query logic on these logs and if we it has a match, incident and alert are created. with this new tool the detection engineers will be able to ingest security data and use transformation to control the entities and the fields that will expose in the detection and use it to check if the built-in detection or newly created detection works as expected.
 2.	Demo Lab with live incidents and Workbooks – Customers and partners both share the need for a live demo environment with continuously updated incidents and workbooks to demonstrate Sentinel functionally and train the SOC on investigation procedures and Sentinel features.
 This tool can help us to ingest data that can trigger an incident in a schedule manner that will allow customers to build demo scripts on top of them.
 
 3.	End2End testing for sentinel functionality – In addition, SIEM engineers can build monitoring around different product features by ingesting expected data into the system as part of schedule management.
 We ingested a security event called "1102 - The audit log was cleared" that will trigger a new incident every time we receive data. We can build monitoring around this flow to check:
 
-1.       Log ingestion delays
-2.       Analytic rule engine functionally
-3.       Incident creation method
-4.       Automation scenario (add automation role when incident and alert are created). 
+* Log ingestion delays
+* Analytic rule engine functionally
+* Incident creation method
+* Automation scenario (add automation role when incident and alert are created). 
   
 high-level diagram of the solution:
 
