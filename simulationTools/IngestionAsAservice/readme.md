@@ -1,4 +1,4 @@
-# Ingestion-AsA-Service
+# Microsoft Sentinel Ingestion-AsA-Service
 
 
 Microsoft Sentinel ingestion-as-a-service uses Azure monitor API to ingest data into Sentinel instances.
@@ -15,7 +15,7 @@ We can use this solution to ingest data on demand into the above-mentioned table
 - ASimDnsActivityLogs
 - Custom tables 
 
-This tool can be used to address the following business use cases:
+##This tool can be used to address the following business use cases:
 
 1. **Detection simulation** – Microsoft Sentinel is Search base SIEM, meaning that after the raw events ingested into the system, the detection engine uses KQL query logic on these logs and if we it has a match, incident and alert are created. with this new tool the detection engineers will be able to ingest security data and use transformation to control the entities and the fields that will expose in the detection and use it to check if the built-in detection or newly created detection works as expected.
 
@@ -32,14 +32,21 @@ We ingested a security event called "1102 - The audit log was cleared" that will
 
 #### High-level diagram of the solution:
 
-![watchlists](./image/Highlevel.png)
+![Highlevel](./image/Highlevel.png)
 
  - The solution uses Azure Workbook as the presentation layer. On this area users will be pointing the input file and define the transformation.
 - Ingestion engine - we use Azure automation accounts, one for the ingestion itself, and the other for scheduling queues. 
 - Schema management we use Azure function as parser helper that creates the “field to replace” list.
 - Data collection Rules – as part of the solution deployment we create DCR’s (Data collection rules) for every built-in table and if user select to ingest custom log, we create the DCR on ingestion time and delete it after.
 
-##
+####Deploying the Solution
+
+Once you click on the deploy to Azure button, the solution package will be deployed as an ARM template, a deploying screen will appear.
+
+
+![Highlevel](./image/ARM_Deployment.png)
+
+Add the missing properties and press create 
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FYaniv-Shasha%2FSentinel%2Fmaster%2FsimulationTools%2FIngestionAsAservice%2Fazuredeploy.json" target="_blank">
     <img src="https://aka.ms/deploytoazurebutton"/>
