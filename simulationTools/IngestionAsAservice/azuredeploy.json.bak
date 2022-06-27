@@ -249,7 +249,7 @@
                 "logProgress": false,
                 "logVerbose": true,
                 "publishContentLink": {
-                  "uri": "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/simulationTools/IngestionAsAservice/Scripts/CommonScheduler.ps1",
+                  "uri": "https://raw.githubusercontent.com/baldcorp/publictest/main/scripts/CommonScheduler.ps1",
                   "version": "1.0.0.0"
                 }
               }
@@ -264,7 +264,7 @@
                 "logProgress": false,
                 "logVerbose": true,
                 "publishContentLink": {
-                  "uri": "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/simulationTools/IngestionAsAservice/Scripts/CommonLogIngest.ps1",
+                  "uri": "https://raw.githubusercontent.com/baldcorp/publictest/main/scripts/CommonLogIngest.ps1",
                   "version": "1.0.0.0"
                 }
               }
@@ -279,7 +279,7 @@
                 "logProgress": false,
                 "logVerbose": true,
                 "publishContentLink": {
-                  "uri": "https://raw.githubusercontent.com/Yaniv-Shasha/Sentinel/master/simulationTools/IngestionAsAservice/Scripts/TestLogIngest.ps1",
+                  "uri": "https://raw.githubusercontent.com/baldcorp/publictest/main/scripts/TestLogIngest.ps1",
                   "version": "1.0.0.0"
                 }
               }
@@ -625,7 +625,7 @@
               "apiVersion": "2021-02-01",
               "name": "[format('{0}/zipdeploy', parameters('functionAppName'))]",
               "properties": {
-                "packageUri": "https://github.com/Yaniv-Shasha/Sentinel/blob/master/simulationTools/IngestionAsAservice/Scripts/func01.zip"
+                "packageUri": "https://github.com/baldcorp/publictest/raw/main/scripts/func01.zip"
               },
               "dependsOn": [
                 "[resourceId('Microsoft.Web/sites', parameters('functionAppName'))]"
