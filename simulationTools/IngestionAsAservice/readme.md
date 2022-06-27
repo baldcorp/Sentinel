@@ -1,12 +1,13 @@
-# Ingestion-AsA-Service Tool
-author: Yaniv Shasha
+# Ingestion-AsA-Service
+
 
 Microsoft Sentinel ingestion-as-a-service uses Azure monitor API to ingest data into Sentinel instances.
 This new solution's main motivation is to provide a simple way to ingest data in a scheduled manner into a built-in table or a custom table.
 Inputs for this solution include log files (JSON or CSV) hosted in GitHub public repositories or Storage accounts.
 With this solution users can also carry out transformations on these logs before they are sent to the destination table.
 
-We can use this solution to ingest data on demand into the above-mentioned tables: 
+We can use this solution to ingest data on demand into the above-mentioned tables:
+ 
 •	SecurityEvent
 •	Syslog
 •	WindowsEvent
