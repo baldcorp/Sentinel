@@ -15,7 +15,7 @@ We can use this solution to ingest data on demand into the above-mentioned table
 - ASimDnsActivityLogs
 - Custom tables 
 
-##This tool can be used to address the following business use cases:
+#### This tool can be used to address the following business use cases:
 
 1. **Detection simulation** – Microsoft Sentinel is Search base SIEM, meaning that after the raw events ingested into the system, the detection engine uses KQL query logic on these logs and if we it has a match, incident and alert are created. with this new tool the detection engineers will be able to ingest security data and use transformation to control the entities and the fields that will expose in the detection and use it to check if the built-in detection or newly created detection works as expected.
 
