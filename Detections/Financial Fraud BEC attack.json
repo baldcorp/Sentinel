@@ -1,0 +1,160 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "workspace": {
+            "type": "String"
+        }
+    },
+    "resources": [
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+            "kind": "Scheduled",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "displayName": "Financial Fraud BEC attack ",
+                "description": "",
+                "severity": "High",
+                "enabled": true,
+                "query": "CommonSecurityLog\r\n| where DeviceVendor == \"Zscaler\"\r\n| where DestinationServiceName == \"General Browsing\"\r\n| where DestinationDnsDomain == \"payplchhkin.org\"\r\n| take 1",
+                "queryFrequency": "P1D",
+                "queryPeriod": "P1D",
+                "triggerOperator": "GreaterThan",
+                "triggerThreshold": 0,
+                "suppressionDuration": "PT5H",
+                "suppressionEnabled": false,
+                "tactics": [
+                    "InitialAccess"
+                ],
+                "techniques": [
+                    "T1566"
+                ],
+                "alertRuleTemplateName": null,
+                "incidentConfiguration": {
+                    "createIncident": true,
+                    "groupingConfiguration": {
+                        "enabled": false,
+                        "reopenClosedIncident": false,
+                        "lookbackDuration": "PT5M",
+                        "matchingMethod": "AllEntities",
+                        "groupByEntities": [],
+                        "groupByAlertDetails": [],
+                        "groupByCustomDetails": []
+                    }
+                },
+                "eventGroupingSettings": {
+                    "aggregationKind": "SingleAlert"
+                },
+                "alertDetailsOverride": null,
+                "customDetails": null,
+                "entityMappings": [
+                    {
+                        "entityType": "Host",
+                        "fieldMappings": [
+                            {
+                                "identifier": "FullName",
+                                "columnName": "DestinationDnsDomain"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "IP",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Address",
+                                "columnName": "DestinationIP"
+                            }
+                        ]
+                    },
+                    {
+                        "entityType": "Account",
+                        "fieldMappings": [
+                            {
+                                "identifier": "Name",
+                                "columnName": "SourceUserName"
+                            }
+                        ]
+                    }
+                ],
+                "sentinelEntitiesMappings": null
+            }
+        },
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/actions/afdff72b7753435dbd862220621169cd')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/afdff72b7753435dbd862220621169cd')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules/actions",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "ruleId": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+                "triggerUri": "[listCallbackURL(concat('/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Summary-Domain-Alert-Trigger','/triggers/When_a_response_to_an_Azure_Sentinel_alert_is_triggered'),'2016-06-01').value]",
+                "logicAppResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Summary-Domain-Alert-Trigger",
+                "operatesOn": "Alert"
+            },
+            "dependsOn": [
+                "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]"
+            ]
+        },
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/actions/f353af1d14ce4684b03828b9dc212e50')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/f353af1d14ce4684b03828b9dc212e50')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules/actions",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "ruleId": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+                "triggerUri": "[listCallbackURL(concat('/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/Sentinel-Incident-Enrich-RiskIQ-Data-Summary-Domain','/triggers/When_a_response_to_an_Azure_Sentinel_alert_is_triggered'),'2016-06-01').value]",
+                "logicAppResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/Sentinel-Incident-Enrich-RiskIQ-Data-Summary-Domain",
+                "operatesOn": "Alert"
+            },
+            "dependsOn": [
+                "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]"
+            ]
+        },
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/actions/55d1819950e249c8b3b27d9e703e7373')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/55d1819950e249c8b3b27d9e703e7373')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules/actions",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "ruleId": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+                "triggerUri": "[listCallbackURL(concat('/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Reputation-Ip-Alert-Trigger','/triggers/When_a_response_to_an_Azure_Sentinel_alert_is_triggered'),'2016-06-01').value]",
+                "logicAppResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Reputation-Ip-Alert-Trigger",
+                "operatesOn": "Alert"
+            },
+            "dependsOn": [
+                "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]"
+            ]
+        },
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/actions/6e83dbb925704949ac66f58f6b0ca09b')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/6e83dbb925704949ac66f58f6b0ca09b')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules/actions",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "ruleId": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+                "triggerUri": "[listCallbackURL(concat('/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/Sentinel-Incident-Enrich-RiskIQ-Data-Summary-IP','/triggers/When_a_response_to_an_Azure_Sentinel_alert_is_triggered'),'2016-06-01').value]",
+                "logicAppResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/Sentinel-Incident-Enrich-RiskIQ-Data-Summary-IP",
+                "operatesOn": "Alert"
+            },
+            "dependsOn": [
+                "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]"
+            ]
+        },
+        {
+            "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/actions/ddb2d94da57d494f93975600d8d9d719')]",
+            "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f/ddb2d94da57d494f93975600d8d9d719')]",
+            "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules/actions",
+            "apiVersion": "2021-10-01-preview",
+            "properties": {
+                "ruleId": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]",
+                "triggerUri": "[listCallbackURL(concat('/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Reputation-Domain-Alert-Trigger','/triggers/When_a_response_to_an_Azure_Sentinel_alert_is_triggered'),'2016-06-01').value]",
+                "logicAppResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourceGroups/SOC/providers/Microsoft.Logic/workflows/RiskIQ-Intel-Reputation-Domain-Alert-Trigger",
+                "operatesOn": "Alert"
+            },
+            "dependsOn": [
+                "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/fd25ab41-6ab5-45dd-8343-4a6e217c6a4f')]"
+            ]
+        }
+    ]
+}
