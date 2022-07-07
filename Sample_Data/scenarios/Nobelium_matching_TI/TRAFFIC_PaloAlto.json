@@ -8,7 +8,7 @@
     "DeviceProduct": "PAN-OS",
     "DeviceEventClassID": "Allowed",
     "LogSeverity": 1,
-    "DeviceAction": "Allowed",
+    "DeviceAction": "Allow",
     "Computer": "Bill-Pc01",
     "DestinationIP": "94.237.100.32",
     "SourceIP": "192.168.5.4",
