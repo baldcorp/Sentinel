@@ -6,7 +6,7 @@
      "AdditionalExtensions": "reason=Allowed;outcome=200;cat=Internet Services;rulelabel=None;ruletype=None;urlclass=Business Use;devicemodel=Virtual Machine",
     "DeviceVendor": "Palo Alto Networks",
     "DeviceProduct": "PAN-OS",
-    "DeviceEventClassID": "Allowed",
+    "DeviceEventClassID": "Allow",
     "LogSeverity": 1,
     "DeviceAction": "Allow",
     "Computer": "Bill-Pc01",
