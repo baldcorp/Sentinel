@@ -7,7 +7,6 @@
     "DeviceVendor": "Palo Alto Networks",
     "DeviceProduct": "PAN-OS",
     "DeviceEventClassID": "Allow",
-    "LogSeverity": 1,
     "DeviceAction": "Allow",
     "Computer": "Bill-Pc01",
     "DestinationIP": "94.237.100.32",
