@@ -13,6 +13,8 @@
     "SourceIP": "192.168.5.4",
     "DeviceVersion": "8.0.0",
     "Activity": "TRAFFIC",
-    "DeviceExternalID": "007057000050480"
+    "DeviceExternalID": "007057000050480",
+    "Type": "CommonSecurityLog",
+    "_ResourceId": "/subscriptions/d1d8779d-38d7-4f06-91db-9cbc8de0176f/resourcegroups/soc-fortinet/providers/microsoft.compute/virtualmachines/soc-fw-cef"
   }
 ]
