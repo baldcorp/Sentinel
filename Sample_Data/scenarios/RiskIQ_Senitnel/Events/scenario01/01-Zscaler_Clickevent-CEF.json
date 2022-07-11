@@ -3,7 +3,7 @@
    "TimeGenerated": "4/26/2022, 08:18:20.276 AM",
    "DeviceVendor": "Zscaler",
    "DeviceProduct": "NSSWeblog",
-   "DeviceEventClassID": "Allowed",
+   "DeviceEventClassID": "DeviceEventClassID",
    "LogSeverity": 3,
    "DeviceAction": "Allowed",
    "SimplifiedDeviceAction": "Allowed",
