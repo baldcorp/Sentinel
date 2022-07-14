@@ -1,9 +1,9 @@
 [{
     "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
     "TimeGenerated [UTC]": "7/9/2022, 2:36:25.407 AM",
-    "Account": "contoso\\kdickens",
+    "Account": "contoso\\karen",
     "AccountType": "User",
-    "Computer": "Kerem-pc",
+    "Computer": "Keren-pc",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
