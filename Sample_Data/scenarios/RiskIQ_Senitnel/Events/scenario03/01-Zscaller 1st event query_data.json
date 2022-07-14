@@ -1,7 +1,7 @@
 [
   {
     "TenantId": "8ecf8077-cf51-4820-aadd-14040956f35d",
-    "TimeGenerated [UTC]": "7/9/2022, 2:01:54.970 AM",
+    "TimeGenerated": "7/9/2022, 2:01:54.970 AM",
     "DeviceVendor": "Zscaler",
     "DeviceProduct": "NSSWeblog",
     "DeviceEventClassID": "url",
