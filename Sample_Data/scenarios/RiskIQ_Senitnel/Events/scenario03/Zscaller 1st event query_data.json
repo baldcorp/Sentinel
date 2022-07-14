@@ -4,7 +4,7 @@
     "TimeGenerated [UTC]": "7/9/2022, 2:01:54.970 AM",
     "DeviceVendor": "Zscaler",
     "DeviceProduct": "NSSWeblog",
-    "DeviceEventClassID": "Allowed",
+    "DeviceEventClassID": "url",
     "DeviceAction": "allowed",
     "SimplifiedDeviceAction": "Allowed",
     "Computer": "zscaler-nss-Contoso",
