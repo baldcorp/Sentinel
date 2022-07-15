@@ -15,7 +15,7 @@
     "AuthenticationPackageName": "NTLM",
     "ElevatedToken": "%%1842",
     "ImpersonationLevel": "%%1833",
-    "IpAddress": "192.168.20.58",
+    "IpAddress": "192.168.20.59",
     "KeyLength": 128,
     "LmPackageName": "NTLM V2",
     "LogonProcessName": "NtLmSsp",
