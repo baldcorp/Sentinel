@@ -3,7 +3,7 @@
     "TimeGenerated [UTC]": "7/9/2022, 2:36:25.407 AM",
     "Account": "contoso\\karen",
     "AccountType": "User",
-    "Computer": "Keren-pc",
+    "Computer": "Karen-pc",
     "EventSourceName": "Microsoft-Windows-Security-Auditing",
     "Channel": "Security",
     "Task": 1,
