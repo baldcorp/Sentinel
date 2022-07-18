@@ -13,7 +13,7 @@
     "Activity": "4688 - A new process has been created.",
     "EventOriginId": "69324c1a-22a9-43b9-afde-b582e4ef00d5",
     "ManagementGroupName": "AOI-8ecf8077-cf51-4820-aadd-14040956f35d",
-    "CommandLine": "nmap -T4 -A -v -oX c:\\users\\kdickens\\appdata\\local\\temp\\zenmap-qvrzjk.xml 192.168.50.22",
+    "CommandLine": "nmap -T4 -A -v -oX c:\\users\\karen\\appdata\\local\\temp\\zenmap-qvrzjk.xml 192.168.50.22",
     "MandatoryLabel": "S-1-16-8192",
     "NewProcessId": "0x14CC",
     "NewProcessName": "C:\\Program Files (x86)\\Nmap\\nmap.exe",
