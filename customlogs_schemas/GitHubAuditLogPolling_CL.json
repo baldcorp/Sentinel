@@ -1,4 +1,6 @@
-[
+{
+    "Name": "CiscoDuo_CL",
+    "Properties": [
   {
     "Name": "TenantId",
     "DataType": "String"
@@ -241,4 +243,4 @@
     "DataType": "String"
   }
 ]
-]
+      }
