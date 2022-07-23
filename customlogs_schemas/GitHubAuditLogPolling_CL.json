@@ -18,10 +18,6 @@
     "DataType": "String"
   },
   {
-    "Name": "TimeGenerated",
-    "DataType": "DateTime"
-  },
-  {
     "Name": "Computer",
     "DataType": "String"
   },
