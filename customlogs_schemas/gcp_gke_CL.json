@@ -1,0 +1,350 @@
+[
+  {
+    "ColumnName": "TenantId",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "SourceSystem",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "MG",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "ManagementGroupName",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "TimeGenerated",
+    "ColumnType": "datetime"
+  },
+  {
+    "ColumnName": "Computer",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "RawData",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_handler_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_scheduling_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_handler_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_scheduling_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_secrets_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_secrets_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_propagationPolicy_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_deleteOptions_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_message_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_reason_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_target_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_code_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_gracePeriodSeconds_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_labels_mutation_webhook_admission_k8s_io_round_0_index_1_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_data_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_revision_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_data_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_revision_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_labels_failed_open_validating_webhook_admission_k8s_io_round_0_index_0_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_preconditions_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_details_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_subsets_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_subsets_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_webhooks_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_webhooks_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_requestMetadata_destinationAttributes_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_requestMetadata_requestAttributes_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_labels_k8s_io_removed_release_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_roleRef_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_subjects_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_roleRef_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_subjects_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_status_code_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request__type_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_apiVersion_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_kind_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_metadata_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_spec_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_status_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response__type_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_apiVersion_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_kind_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_metadata_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_spec_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_status_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_labels_k8s_io_deprecated_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_request_rules_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_response_rules_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_status_message_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_receiveTimestamp_t",
+    "ColumnType": "datetime"
+  },
+  {
+    "ColumnName": "time_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "host_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "source_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "sourcetype_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_publish_time_d",
+    "ColumnType": "real"
+  },
+  {
+    "ColumnName": "event_data_insertId_g",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_labels_authorization_k8s_io_decision_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_labels_authorization_k8s_io_reason_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_logName_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_operation_first_b",
+    "ColumnType": "bool"
+  },
+  {
+    "ColumnName": "event_data_operation_id_g",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_operation_last_b",
+    "ColumnType": "bool"
+  },
+  {
+    "ColumnName": "event_data_operation_producer_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload__type_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_authenticationInfo_principalEmail_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_authorizationInfo_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_methodName_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_requestMetadata_callerIp_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_requestMetadata_callerSuppliedUserAgent_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_resourceName_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_protoPayload_serviceName_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_receiveTimestamp_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_resource_labels_cluster_name_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_resource_labels_location_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_resource_labels_project_id_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_resource_type_s",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "event_data_timestamp_t",
+    "ColumnType": "datetime"
+  },
+  {
+    "ColumnName": "event_attributes_logging_googleapis_com_timestamp_t",
+    "ColumnType": "datetime"
+  },
+  {
+    "ColumnName": "Type",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "_ResourceId",
+    "ColumnType": "string"
+  }
+]
