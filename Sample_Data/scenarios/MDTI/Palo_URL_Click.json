@@ -9,7 +9,7 @@
    "SimplifiedDeviceAction": "Allowed",
    "Computer": "Collector01",
    "CommunicationDirection": 1,
-   "DestinationIP": "148.72.106.102",
+   "DestinationIP": "148.22.55.102",
    "SourceIP": "192.168.2.100",
    "DeviceVersion": 8.0,
    "Activity": "Allowed",
