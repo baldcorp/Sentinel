@@ -16,11 +16,11 @@
    "AdditionalExtensions": "reason=Allowed;outcome=200;cat=Internet Services;rulelabel=None;ruletype=None;urlclass=Business Use;devicemodel=Virtual Machine",
    "ApplicationProtocol": "HTTP",
    "DestinationServiceName": "General Browsing",
-   "DestinationDnsDomain": "giovaneisola.it",
+   "DestinationDnsDomain": "amazondvdbox.com",
    "FileType": "None",
    "ReceivedBytes": 550,
    "SentBytes": 307,
-   "RequestURL": "https://www.giovaneisola.it/stk/6e4d3",
+   "RequestURL": "http://amazondvdbox.com/js/varien/js.js",
    "SourceUserName": "JeffL@contoso.com"
  },
  {

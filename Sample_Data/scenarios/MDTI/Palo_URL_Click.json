@@ -16,11 +16,11 @@
    "AdditionalExtensions": "reason=Allowed;outcome=200;cat=Internet Services;rulelabel=None;ruletype=None;urlclass=Business Use;devicemodel=Virtual Machine",
    "ApplicationProtocol": "HTTP",
    "DestinationServiceName": "General Browsing",
-   "DestinationDnsDomain": "amazondvdbox.com",
+   "DestinationDnsDomain": "bcomb.net",
    "FileType": "None",
    "ReceivedBytes": 550,
    "SentBytes": 307,
-   "RequestURL": "http://amazondvdbox.com/js/varien/js.js",
+   "RequestURL": "http://bcomb.net/",
    "SourceUserName": "JeffL@contoso.com"
  },
  {
