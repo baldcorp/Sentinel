@@ -20,7 +20,7 @@
    "FileType": "None",
    "ReceivedBytes": 550,
    "SentBytes": 307,
-   "requestURL": "http://bcomb.net/",
+   "request": "http://bcomb.net/",
    "SourceUserName": "JeffL@contoso.com"
  },
  {
@@ -44,7 +44,7 @@
   "FileType": "None",
   "ReceivedBytes": 550,
   "SentBytes": 307,
-  "requestURL": "https://www.trungtammaychieu.com/Payment/usps",
+  "request": "https://www.trungtammaychieu.com/Payment/usps",
   "SourceUserName": "Yanivsh@contoso.com"
 },
 {
@@ -68,7 +68,7 @@
   "FileType": "None",
   "ReceivedBytes": 550,
   "SentBytes": 307,
-  "requestURL": "http://login.servp456p.com.petroleum.co.ke/60b28",
+  "request": "http://login.servp456p.com.petroleum.co.ke/60b28",
   "SourceUserName": "JeffL@contoso.com"
 },
 {
@@ -92,7 +92,7 @@
   "FileType": "None",
   "ReceivedBytes": 550,
   "SentBytes": 307,
-  "requestURL": "https://cgi.papersmiths.com/b284dc80ec6386d139a9ac00ca2a3f9a/98ee855061495c3804124af4a257ecc7",
+  "request": "https://cgi.papersmiths.com/b284dc80ec6386d139a9ac00ca2a3f9a/98ee855061495c3804124af4a257ecc7",
   "SourceUserName": "JeffL@contoso.com"
 }
 ]
