@@ -7,20 +7,20 @@
    "LogSeverity": 3,
    "DeviceAction": "Allowed",
    "SimplifiedDeviceAction": "Allowed",
-   "Computer": "zscaler-nss-Contoso",
+   "Computer": "zscaler-nss-woodgrove",
    "CommunicationDirection": 1,
- "DestinationIP": "145.14.145.167",
+   "DestinationIP": "195.20.49.50",
    "SourceIP": "172.16.67.36",
    "DeviceVersion": 5.7,
    "Activity": "Allowed",
    "AdditionalExtensions": "reason=Allowed;outcome=200;cat=Internet Services;rulelabel=None;ruletype=None;urlclass=Business Use;devicemodel=Virtual Machine",
    "ApplicationProtocol": "HTTP",
    "DestinationServiceName": "General Browsing",
-    "DestinationDnsDomain": "nueldaafsdf.000webhostapp.com",
+    "DestinationDnsDomain": "account-verify-i.ml",
    "FileType": "None",
    "ReceivedBytes": 550,
    "SentBytes": 307,
-   "RequestURL": "https://nueldaafsdf.000webhostapp.com",
-   "SourceUserName": "tgreen@woodgrove.ms"
+   "RequestURL": "https://account-verify-i.ml",
+   "SourceUserName": "jwalcott@woodgrove.ms"
  }
 ]
