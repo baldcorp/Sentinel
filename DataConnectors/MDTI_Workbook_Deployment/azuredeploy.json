@@ -67,12 +67,21 @@
       {
         "type": "Microsoft.Storage/storageAccounts",
         "name": "[variables('storageAccountName')]",
-        "apiVersion": "2016-12-01",
+          "apiVersion": "2019-06-01",
         "location": "[parameters('location')]",
         "kind": "Storage",
         "sku": {
           "name": "[parameters('storageAccountType')]"
-        }
+        },
+         "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true
+                }
       },
       {
         "type": "Microsoft.Web/serverfarms",
@@ -83,9 +92,12 @@
           "name": "Y1",
           "tier": "Dynamic"
         },
+          "kind": "functionapp",
         "properties": {
           "name": "[variables('hostingPlanName')]",
-          "computeMode": "Dynamic"
+           "workerSize": "0",
+                "workerSizeId": "0",
+                "numberOfWorkers": "1"
         }
       },
       {
@@ -107,11 +119,11 @@
             "appSettings": [
               {
                 "name": "AzureWebJobsStorage",
-                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('StorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', toLower(variables('StorageAccountName'))), '2019-06-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
               },
               {
                 "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2015-05-01-preview').key1)]"
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('StorageAccountName'),';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', toLower(variables('StorageAccountName'))), '2019-06-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
               },
               {
                 "name": "WEBSITE_CONTENTSHARE",
@@ -161,7 +173,7 @@
         }
       },
       {
-        "name": "[concat(variables('functionAppName'), '/', 'ComponentsforHostname')]",
+        "name": "[concat(variables('functionAppName'), '/', 'ComponentsForIPAddress')]",
         "type": "Microsoft.Web/sites/functions",
         "apiVersion": "2018-02-01",
         "properties": {
