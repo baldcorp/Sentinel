@@ -1,0 +1,828 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "appName": {
+        "type": "string",
+        "metadata": {
+          "description": "The name of the function app that you wish to create."
+        }
+      },
+      "storageAccountType": {
+        "type": "string",
+        "defaultValue": "Standard_LRS",
+        "allowedValues": ["Standard_LRS", "Standard_GRS", "Standard_RAGRS"],
+        "metadata": {
+          "description": "Storage Account type"
+        }
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
+        }
+      },
+      "runtime": {
+        "type": "string",
+        "defaultValue": "powershell",
+        "allowedValues": ["powershell"],
+        "metadata": {
+          "description": "The language worker runtime to load in the function app."
+                    }
+        },
+          
+                   "ClientID": {
+                    "type": "string",
+                    "defaultValue": "Provide the client ID",
+                    "metadata": {
+                        "description": "Application Client ID"
+                                }
+                           },
+                  
+                    "ClientSecret": {
+                    "type": "string",    
+                    "defaultValue": "Provide the Client Secret"
+                  },
+                  
+                    "tenantid": {
+                    "type": "string",    
+                    "defaultValue": ""
+                    }
+    
+       },
+        
+      "variables": {
+      "functionAppName": "[parameters('appName')]",
+      "hostingPlanName": "[parameters('appName')]",
+      "applicationInsightsName": "[parameters('appName')]",
+      "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'azfunctions')]",
+      "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+      "functionWorkerRuntime": "[parameters('runtime')]",
+      "ClientID":"[parameters('ClientID')]",
+      "ClientSecret":"[parameters('ClientID')]",
+      "tenantid":"[parameters('ClientID')]"
+    },  
+    "resources": [
+      {
+        "type": "Microsoft.Storage/storageAccounts",
+        "name": "[variables('storageAccountName')]",
+          "apiVersion": "2019-06-01",
+        "location": "[parameters('location')]",
+        "kind": "Storage",
+        "sku": {
+          "name": "[parameters('storageAccountType')]"
+        },
+         "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true
+                }
+      },
+      {
+        "type": "Microsoft.Web/serverfarms",
+        "apiVersion": "2018-02-01",
+        "name": "[variables('hostingPlanName')]",
+        "location": "[parameters('location')]",
+        "sku": {
+          "name": "Y1",
+          "tier": "Dynamic"
+        },
+          "kind": "functionapp",
+        "properties": {
+          "name": "[variables('hostingPlanName')]",
+           "workerSize": "0",
+                "workerSizeId": "0",
+                "numberOfWorkers": "1"
+        }
+      },
+      {
+        "apiVersion": "2015-08-01",
+        "type": "Microsoft.Web/sites",
+        "name": "[variables('functionAppName')]",
+        "location": "[parameters('location')]",
+        "kind": "functionapp",
+        "dependsOn": [
+          "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+          "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+        ],
+            "identity": {
+        "type": "SystemAssigned"
+     },
+        "properties": {
+          "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
+          "siteConfig": {
+            "appSettings": [
+              {
+                "name": "AzureWebJobsStorage",
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('StorageAccountName'),';AccountKey=',listKeys(resourceId('Microsoft.Storage/storageAccounts', toLower(variables('StorageAccountName'))), '2019-06-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
+              },
+              {
+                "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('StorageAccountName'),';AccountKey=', listKeys(resourceId('Microsoft.Storage/storageAccounts', toLower(variables('StorageAccountName'))), '2019-06-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
+              },
+              {
+                "name": "WEBSITE_CONTENTSHARE",
+                "value": "[toLower(variables('functionAppName'))]"
+              },
+              {
+                "name": "FUNCTIONS_EXTENSION_VERSION",
+                "value": "~4"
+              },
+              {
+                "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+                "value": "[reference(resourceId('microsoft.insights/components/', variables('applicationInsightsName')), '2015-05-01').InstrumentationKey]"
+              },
+              {
+                "name": "FUNCTIONS_WORKER_RUNTIME",
+                "value": "[variables('functionWorkerRuntime')]"
+              },
+            {
+              "name": "ClientID",
+              "value": "[parameters('ClientID')]"
+            },
+            {
+              "name": "ClientSecret",
+              "value": "[parameters('ClientSecret')]"
+            },
+            {
+              "name": "tenantid",
+              "value": "[parameters('tenantid')]"
+            }
+            ],
+        
+                "powerShellVersion": "7.2"
+          }
+        }
+      },
+      {
+        "apiVersion": "2018-05-01-preview",
+        "name": "[variables('applicationInsightsName')]",
+        "type": "microsoft.insights/components",
+        "location": "[resourceGroup().location]",
+        "tags": {
+          "[concat('hidden-link:', resourceGroup().id, '/providers/Microsoft.Web/sites/', variables('applicationInsightsName'))]": "Resource"
+        },
+        "properties": {
+          "ApplicationId": "[variables('applicationInsightsName')]",
+          "Request_Source": "IbizaWebAppExtensionCreate"
+        }
+      },
+      {
+        "name": "[concat(variables('functionAppName'), '/', 'ComponentsForIPAddress')]",
+        "type": "Microsoft.Web/sites/functions",
+        "apiVersion": "2018-02-01",
+        "properties": {
+            "config": {
+                "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+                ],
+                "disabled": true
+            },
+         
+            "files": {
+              "run.ps1": "#Paste the code from Queue DLP Events in to this window. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ComponentsForIPAddress.ps1"
+                     }
+
+        },
+        "dependsOn": [
+            "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+        ]
+    },
+    {
+      "name": "[concat(variables('functionAppName'), '/', 'ComponentsforHostname')]",
+      "type": "Microsoft.Web/sites/functions",
+      "apiVersion": "2018-02-01",
+      "properties": {
+          "config": {
+              "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+              ],
+              "disabled": true
+          },
+            
+         "files": {
+          "run.ps1": "#Paste the code from enable Subscription and place it here. This function can be removed and disabled after completion. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ComponentsforHostname.ps1"
+      }
+      },
+      "dependsOn": [
+          "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+      ]
+  },
+    {
+      "name": "[concat(variables('functionAppName'), '/', 'CookiesIPAddress')]",
+      "type": "Microsoft.Web/sites/functions",
+      "apiVersion": "2018-02-01",
+      "properties": {
+          "config": {
+              "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+              ],
+              "disabled": true
+          },
+            
+         "files": {
+          "run.ps1": "#Paste the code from enable Subscription and place it here. This function can be removed and disabled after completion. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/CookiesIPAddress.ps1"
+      }
+      },
+      "dependsOn": [
+          "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+      ]
+  },
+    {
+      "name": "[concat(variables('functionAppName'), '/', 'CookiesforHostname')]",
+      "type": "Microsoft.Web/sites/functions",
+      "apiVersion": "2018-02-01",
+      "properties": {
+          "config": {
+              "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+              ],
+              "disabled": false
+          },
+         
+         "files": {
+            "run.ps1": "#Paste the code for storing DLP events here and customize it based on your requirements. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/CookiesforHostname.ps1"
+        }
+      },
+      "dependsOn": [
+          "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+      ]
+  },
+
+
+    {
+      "name": "[concat(variables('functionAppName'), '/', 'GetArticlesFromVulnerabilities')]",
+      "type": "Microsoft.Web/sites/functions",
+      "apiVersion": "2018-02-01",
+      "properties": {
+          "config": {
+              "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+              ],
+              "disabled": false
+          },
+         
+         "files": {
+            "run.ps1": "#Paste the code for storing DLP events here and customize it based on your requirements. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetArticlesFromVulnerabilities.ps1"
+        }
+      },
+      "dependsOn": [
+          "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+      ]
+  },
+
+  {
+    "name": "[concat(variables('functionAppName'), '/', 'GetComponentsFromVulnerabilities')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetComponentsFromVulnerabilities.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'GetIndictorFromArticle')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetIndictorFromArticle.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'GetIndictorFromIntelProfile')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetIndictorFromIntelProfile.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'GetSingleArticle')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetSingleArticle.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'GetSingleIntelProfile')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetSingleIntelProfile.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'GetSingleVulnerability')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/GetSingleVulnerability.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'HostInformation')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/HostInformation.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'IPAddressInformation')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/IPAddressInformation.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'ListArticles')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ListArticles.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'ListIntelProfile')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ListIntelProfile.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'ReputationforHostname')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ReputationforHostname.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'ReputationforIPAddress')]",
+   "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/ReputationforIPAddress.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'TrackersforHostname')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/TrackersforHostname.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+},
+{
+    "name": "[concat(variables('functionAppName'), '/', 'TrackersforIPAddress')]",
+    "type": "Microsoft.Web/sites/functions",
+    "apiVersion": "2018-02-01",
+    "properties": {
+        "config": {
+            "bindings": [
+                {
+                  "authLevel": "anonymous",
+                  "type": "httpTrigger",
+                  "direction": "in",
+                  "name": "Request",
+                  "methods": [
+                    "get",
+                    "post"
+                  ]
+                },
+                {
+                  "type": "http",
+                  "direction": "out",
+                  "name": "Response"
+                }
+            ],
+            "disabled": false
+        },
+       
+       "files": {
+          "run.ps1": "#Paste the code for getting the MessageID. https://github.com/Yaniv-Shasha/Sentinel/blob/master/DataConnectors/MDTI_Workbook/TrackersforIPAddress.ps1"
+      }
+    },
+    "dependsOn": [
+        "[resourceId('Microsoft.Web/sites', variables('functionAppName'))]"
+    ]
+}
+
+      
+    ]
+  }
