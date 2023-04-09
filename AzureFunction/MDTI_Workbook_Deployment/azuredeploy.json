@@ -178,23 +178,23 @@
         "apiVersion": "2018-02-01",
         "properties": {
             "config": {
-                "bindings": [
+               "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
-                ],
+            ],
                 "disabled": true
             },
          
@@ -215,21 +215,21 @@
           "config": {
               "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
-              ],
+            ],
               "disabled": true
           },
             
@@ -247,23 +247,23 @@
       "apiVersion": "2018-02-01",
       "properties": {
           "config": {
-              "bindings": [
+             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
-              ],
+            ],
               "disabled": true
           },
             
@@ -283,21 +283,21 @@
           "config": {
               "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
-              ],
+            ],
               "disabled": false
           },
          
@@ -317,23 +317,23 @@
       "apiVersion": "2018-02-01",
       "properties": {
           "config": {
-              "bindings": [
+             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
-              ],
+            ],
               "disabled": false
           },
          
@@ -352,21 +352,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -388,19 +388,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -420,21 +420,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -456,19 +456,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -488,21 +488,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -524,19 +524,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -556,21 +556,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -590,21 +590,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -626,19 +626,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -660,19 +660,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -692,21 +692,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -728,19 +728,19 @@
         "config": {
             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -760,21 +760,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+           "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
@@ -794,21 +794,21 @@
     "apiVersion": "2018-02-01",
     "properties": {
         "config": {
-            "bindings": [
+             "bindings": [
                 {
-                  "authLevel": "anonymous",
-                  "type": "httpTrigger",
-                  "direction": "in",
-                  "name": "Request",
-                  "methods": [
-                    "get",
-                    "post"
-                  ]
+                    "name": "Request",
+                    "authLevel": "anonymous",
+                    "methods": [
+                        "get",
+                        "post"
+                    ],
+                    "direction": "in",
+                    "type": "httpTrigger"
                 },
                 {
-                  "type": "http",
-                  "direction": "out",
-                  "name": "Response"
+                    "type": "http",
+                    "direction": "out",
+                    "name": "Response"
                 }
             ],
             "disabled": false
