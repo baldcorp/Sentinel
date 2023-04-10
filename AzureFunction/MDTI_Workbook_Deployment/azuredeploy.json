@@ -142,15 +142,15 @@
                 "value": "[variables('functionWorkerRuntime')]"
               },
             {
-              "name": "ClientID",
+              "name": "clientId",
               "value": "[parameters('ClientID')]"
             },
             {
-              "name": "ClientSecret",
+              "name": "clientSecret",
               "value": "[parameters('ClientSecret')]"
             },
             {
-              "name": "tenantid",
+              "name": "tenantId",
               "value": "[parameters('tenantid')]"
             }
             ],
