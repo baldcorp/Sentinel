@@ -31,7 +31,7 @@ $hostname = $Request.query["hostname"]
 
 
 # graphAPI Get users properties
-$apiUrl =  "https://graph.microsoft.com/beta/security/threatIntelligence/hosts($hostname)"
+$apiUrl =  "https://graph.microsoft.com/beta/security/threatIntelligence/hosts/$hostname"
 $apiUrl
 $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $Token"} -Uri $apiUrl -Method Get -ContentType aplication/json -UseBasicParsing
 $obj = $Data | convertTo-Json
