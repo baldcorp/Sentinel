@@ -592,7 +592,7 @@
                                 "host": {
                                     "triggerName": "manual",
                                     "workflow": {
-                                        "id": "[parameters('workflows_MDTI_Base_externalid')]"
+                                        "id": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Logic/workflows/MDTI-Base')]"
                                     }
                                 }
                             }
