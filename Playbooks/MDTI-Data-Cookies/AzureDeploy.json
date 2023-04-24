@@ -140,7 +140,7 @@
                                     "inputs": {
                                         "body": {
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
-                                            "message": "<p>Last week of cookies for @{items('For_each_host')?['HostName']}.@{items('For_each_host')?['DnsDomain']}<br>\n@{variables('Domain_comment')}</p>"
+                                            "message": "<p>MDTI Cookies for Indicator: @{items('For_each_host')?['HostName']}.@{items('For_each_host')?['DnsDomain']}<br>\n@{variables('Domain_comment')}</p>"
                                         },
                                         "host": {
                                             "connection": {
@@ -231,7 +231,6 @@
                                                 "name": "result_output_host",
                                                 "value": {
                                                     "First": "@{items('For_each')?['firstSeenDateTime']}",
-                                                    "Host": "@{items('For_each')?['host']?['id']}",
                                                     "Last": "@{items('For_each')?['lastSeenDateTime']}",
                                                     "Name": "@{items('For_each')?['name']}",
                                                     "domain": "@{items('For_each')?['domain']}"
@@ -345,7 +344,7 @@
                                     "inputs": {
                                         "body": {
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
-                                            "message": "<p>Last week of cookies for @{items('For_each_IP_Address')?['Address']}<br>\n@{variables('IPcomment')}</p>"
+                                            "message": "<p>MDTI Cookies for Indicator: @{items('For_each_IP_Address')?['Address']}<br>\n@{variables('IPcomment')}</p>"
                                         },
                                         "host": {
                                             "connection": {
@@ -436,7 +435,6 @@
                                                 "name": "result_output_ip",
                                                 "value": {
                                                     "First": "@{items('For_each_2')?['firstSeenDateTime']}",
-                                                    "Host": "@{items('For_each_2')?['host']?['id']}",
                                                     "Last": "@{items('For_each_2')?['lastSeenDateTime']}",
                                                     "Name": "@{items('For_each_2')?['name']}",
                                                     "domain": "@{items('For_each_2')?['domain']}"
