@@ -26,7 +26,7 @@
         },
         "releaseNotes": [{
                 "version": "1.0.1",
-                "title": "MDTI Data cookies",
+                "title": "MDTI Data Cookies",
                 "notes": [
                     "Updated version with Secure Inputs for HTTP REST and Secure Output for MDTI-Base actions"
                 ]
@@ -35,7 +35,7 @@
     },
     "parameters": {
         "PlaybookName": {
-            "defaultValue": "MDTI-Data-cookies",
+            "defaultValue": "MDTI-Data-Cookies",
             "type": "String"
         }
     },
@@ -345,7 +345,7 @@
                                     "inputs": {
                                         "body": {
                                             "incidentArmId": "@triggerBody()?['object']?['id']",
-                                            "message": "<p>Last week of Cookies for .@{items('For_each_IP_Address')?['Address']}<br>\n@{variables('IPcomment')}</p>"
+                                            "message": "<p>Last week of cookies for @{items('For_each_IP_Address')?['Address']}<br>\n@{variables('IPcomment')}</p>"
                                         },
                                         "host": {
                                             "connection": {
