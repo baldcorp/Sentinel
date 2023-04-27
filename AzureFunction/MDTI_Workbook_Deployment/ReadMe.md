@@ -33,7 +33,7 @@ By clicking deploy above you will deploy an Azure Function App with the function
 
 * 4. **Deployment of the code to the function**
   * Download the mdtiwb.zip from this repo
-  * Start to connect to Azure PowerShell Connect-AzAccout
+  * Start to connect to Azure PowerShell Connect-AzAccount
   * Run Publish-AzWebApp -ResourceGroupName REPLACEWITHYOURRG -Name REPLACEWITHYOURAPPNAME -ArchivePath C:\YOURPATH\mdtiwb.zip  **Note:The names are case sensitive**
 
 * 5. Configure the Azure function to allow CROS
