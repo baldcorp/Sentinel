@@ -30,20 +30,18 @@ $token = ($tokenRequest.Content | ConvertFrom-Json).access_token
 
 
 # graphAPI Get users properties
-$apiUrl =   "https://graph.microsoft.com/beta/security/threatIntelligence/intelProfiles?$count=true"
+$apiUrl =   "https://graph.microsoft.com/beta/security/threatIntelligence/intelProfiles?`$top=200&`$select=id,kind,title,firstActiveDateTime,aliases,targets,sponsorStates"
 
 $apiUrl
 $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $Token"} -Uri $apiUrl -Method Get -ContentType aplication/json -UseBasicParsing
-$obj = $Data.value | convertTo-Json -EnumsAsStrings 
-
-
+$obj = $Data.value | ConvertTo-Json -depth 100 
 
 
 
 # Return Write-OMSLogfile response to output binding
 Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
-    Body = $obj
+    Body = $Data
 
 })
 

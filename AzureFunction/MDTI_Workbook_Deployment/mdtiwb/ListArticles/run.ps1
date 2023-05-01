@@ -30,11 +30,11 @@ $token = ($tokenRequest.Content | ConvertFrom-Json).access_token
 
 
 # graphAPI Get users properties
-$apiUrl = "https://graph.microsoft.com/beta/security/threatIntelligence/articles?$count=true"
+$apiUrl = "https://graph.microsoft.com/beta/security/threatIntelligence/articles?`$sort=createdDateTime&`$top=200&`$select=id,createdDateTime,lastUpdatedDateTime,title,tags"
 $apiUrl
 $Data = Invoke-RestMethod -Headers @{Authorization = "Bearer $Token"} -Uri $apiUrl -Method Get -ContentType aplication/json -UseBasicParsing
-$obj = $Data.value | convertTo-Json
-$obj
+$obj = $Data.value | convertTo-Json -depth 100
+
 
 
 
