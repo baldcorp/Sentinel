@@ -56,7 +56,7 @@
     "ColumnType": "string"
   },
   {
-    "ColumnName": "Destination_ip_bytes"
+    "ColumnName": "Destination_ip_bytes",
     "ColumnType": "int"
   }
 ]
