@@ -1,0 +1,61 @@
+[
+  {
+    "ColumnName": "SourceIP",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "SourcePort",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "DestinationIP",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "DestinationPort",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "Protocol",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "service",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "duration",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "Source_bytes",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "Destination_bytes",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "conn_state",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "history",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "Source_pkts",
+    "ColumnType": "int"
+  },
+  {
+    "ColumnName": "Source_ip_bytes",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "Destination_pkts",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "Destination_ip_bytes"
+  }
+]
