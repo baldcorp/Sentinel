@@ -1,5 +1,13 @@
 [
   {
+    "ColumnName": "TenantId",
+    "ColumnType": "string"
+  },
+   {
+    "ColumnName": "ManagementGroupName",
+    "ColumnType": "string"
+  },
+  {
     "ColumnName": "SourceIP",
     "ColumnType": "string"
   },
@@ -9,6 +17,10 @@
   },
   {
     "ColumnName": "DestinationIP",
+    "ColumnType": "string"
+  },
+  {
+    "ColumnName": "_ResourceId",
     "ColumnType": "string"
   },
   {
