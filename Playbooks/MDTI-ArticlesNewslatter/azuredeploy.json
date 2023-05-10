@@ -16,7 +16,7 @@
         },
         "secret": {
             "defaultValue": "",
-            "type": "String"
+            "type": "securestring"
         },
         "applicationid": {
             "defaultValue": "",
