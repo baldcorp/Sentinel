@@ -136,7 +136,8 @@
                                             "type": "Compose",
                                             "inputs": {
                                                 "ArticleName": "@{items('For_each')?['title']}",
-                                                "Article_URL": "https://ti.defender.microsoft.com/articles/@{items('For_each')['id']}"
+                                                "Article_URL": "https://ti.defender.microsoft.com/articles/@{items('For_each')['id']}",
+                                            "CreationDate": "@{items('For_each')?['createdDateTime']}"
                                             }
                                         }
                                     },
