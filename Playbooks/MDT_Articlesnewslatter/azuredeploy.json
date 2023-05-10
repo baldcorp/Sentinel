@@ -1,0 +1,397 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "metadata": {
+        "comments": "A playbook for a new incident creation email notification.",
+        "author": "Ali Yazdani"
+    },
+    "parameters": {
+        "NumberOfLookupdays": {
+            "defaultValue": -7,
+            "type": "int"
+        },
+        "TenantId": {
+            "defaultValue": "",
+            "type": "string"
+        },
+        "secret": {
+            "defaultValue": "",
+            "type": "String"
+        },
+        "applicationid": {
+            "defaultValue": "",
+            "type": "String"
+        },
+        "EmailTo": {
+            "defaultValue": "",
+            "type": "String"
+        },
+        "PlaybookName": {
+            "defaultValue": "MDTI-Articles-newsletter",
+            "type": "String"
+        }
+    },
+    "variables": {
+        "o365ConnectionName": "[concat('o365-', parameters('PlaybookName'))]"
+    },
+    "resources": [
+        
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[variables('o365ConnectionName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/office365')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[parameters('PlaybookName')]",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "LogicAppsCategory": "security"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/connections', variables('o365ConnectionName'))]"
+            ],
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "Recurrence": {
+                            "recurrence": {
+                                "frequency": "Day",
+                                "interval": 1
+                            },
+                            "evaluatedRecurrence": {
+                                "frequency": "Day",
+                                "interval": 1
+                            },
+                            "type": "Recurrence"
+                        }
+                    },
+                    "actions": {
+                        "Days": {
+                            "runAfter": {},
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "Days",
+                                        "type": "integer",
+                                        "value": "[parameters('NumberOfLookupdays')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "EmailTo": {
+                            "runAfter": {
+                                "application": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "EmailTo",
+                                        "type": "string",
+                                        "value": "[parameters('EmailTo')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "For_each": {
+                            "foreach": "@body('Parse_JSON')?['value']",
+                            "actions": {
+                                "Condition": {
+                                    "actions": {
+                                        "Append_to_array_variable": {
+                                            "runAfter": {
+                                                "Compose": [
+                                                    "Succeeded"
+                                                ]
+                                            },
+                                            "type": "AppendToArrayVariable",
+                                            "inputs": {
+                                                "name": "article",
+                                                "value": "@outputs('Compose')"
+                                            }
+                                        },
+                                        "Compose": {
+                                            "runAfter": {},
+                                            "type": "Compose",
+                                            "inputs": {
+                                                "ArticleName": "@{items('For_each')?['title']}",
+                                                "Article_URL": "https://ti.defender.microsoft.com/articles/@{items('For_each')['id']}"
+                                            }
+                                        }
+                                    },
+                                    "runAfter": {},
+                                    "expression": {
+                                        "and": [
+                                            {
+                                                "greater": [
+                                                    "@items('For_each')?['createdDateTime']",
+                                                    "@variables('time')"
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "type": "If"
+                                },
+                                "Create_HTML_table": {
+                                    "runAfter": {
+                                        "Condition": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "type": "Table",
+                                    "inputs": {
+                                        "format": "HTML",
+                                        "from": "@variables('article')"
+                                    }
+                                },
+                                "Set_variable": {
+                                    "runAfter": {
+                                        "Create_HTML_table": [
+                                            "Succeeded"
+                                        ]
+                                    },
+                                    "type": "SetVariable",
+                                    "inputs": {
+                                        "name": "article2",
+                                        "value": "@body('Create_HTML_table')"
+                                    }
+                                }
+                            },
+                            "runAfter": {
+                                "Parse_JSON": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Foreach"
+                        },
+                        "Int_article": {
+                            "runAfter": {
+                                "LookBack_Time": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "article",
+                                        "type": "array"
+                                    }
+                                ]
+                            }
+                        },
+                        "LookBack_Time": {
+                            "runAfter": {
+                                "EmailTo": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "time",
+                                        "type": "string",
+                                        "value": "@{addDays(utcNow(),variables('Days'))}"
+                                    }
+                                ]
+                            }
+                        },
+                        "Parse_JSON": {
+                            "runAfter": {
+                                "get_New_Articles": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ParseJson",
+                            "inputs": {
+                                "content": "@body('get_New_Articles')",
+                                "schema": {
+                                    "properties": {
+                                        "@@odata.context": {
+                                            "type": "string"
+                                        },
+                                        "@@odata.nextLink": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "items": {
+                                                "properties": {
+                                                    "createdDateTime": {
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "tags": {
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "title": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "id",
+                                                    "createdDateTime",
+                                                    "title",
+                                                    "tags"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        },
+                        "Secret": {
+                            "runAfter": {
+                                "Tenant": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "secret",
+                                        "type": "string",
+                                        "value": "[parameters('secret')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "Send_an_email_(V2)": {
+                            "runAfter": {
+                                "For_each": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "body": {
+                                    "Body": "<p>@{variables('article2')}</p>",
+                                    "Importance": "Normal",
+                                    "Subject": "Newly MDTI articles in the last @{variables('Days')} Day.",
+                                    "To": "@variables('EmailTo')"
+                                },
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['office365']['connectionId']"
+                                    }
+                                },
+                                "method": "post",
+                                "path": "/v2/Mail"
+                            }
+                        },
+                        "Tenant": {
+                            "runAfter": {
+                                "Days": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "Tenant",
+                                        "type": "string",
+                                        "value": "[parameters('TenantId')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "application": {
+                            "runAfter": {
+                                "Secret": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "application",
+                                        "type": "string",
+                                        "value": "[parameters('applicationid')]"
+                                    }
+                                ]
+                            }
+                        },
+                        "get_New_Articles": {
+                            "runAfter": {
+                                "int_article2": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "Http",
+                            "inputs": {
+                                "authentication": {
+                                    "audience": "https://graph.microsoft.com",
+                                    "clientId": "@variables('application')",
+                                    "secret": "@variables('secret')",
+                                    "tenant": "@variables('Tenant')",
+                                    "type": "ActiveDirectoryOAuth"
+                                },
+                                "method": "GET",
+                                "uri": "https://graph.microsoft.com/beta/security/threatIntelligence/articles?$sort=createdDateTime&$top=50&$select=title,tags,createdDateTime"
+                            }
+                        },
+                        "int_article2": {
+                            "runAfter": {
+                                "Int_article": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "InitializeVariable",
+                            "inputs": {
+                                "variables": [
+                                    {
+                                        "name": "article2",
+                                        "type": "string"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "parameters": {
+                    "$connections": {
+                        "value": {
+                              "office365": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', variables('o365ConnectionName'))]",
+                                "connectionName": "[variables('o365ConnectionName')]",
+                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/office365')]"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
