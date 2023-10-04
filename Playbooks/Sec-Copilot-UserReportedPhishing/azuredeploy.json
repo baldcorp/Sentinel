@@ -75,12 +75,12 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "Return the reputation for all the domain your shared",
+                                    "PromptContent":  "Return the reputation for all the domain your shared.",
                                     "SessionId":  "@body('_indicators_within_the_email')?['sessionId']"
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -96,13 +96,13 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "Check if this email sent to other users within my organization?",
+                                    "PromptContent":  "Base on the email title check if this email sent to other users in my organization?",
                                     "SessionId":  "@body('sender_and_return_path_email')?['sessionId']",
                                     "SkillName":  "LookupDataFromDefender365Hunting"
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -118,13 +118,13 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "check if other users in the organization click on the link from this email?",
+                                    "PromptContent":  "Base on the email title, and the sender email address, check if other users in the organization click on the link inside the email? ignore the link \"https://security.microsoft.com/userSubmissionsReportMessage\"",
                                     "SessionId":  "@body('Evaluations_-_Evaluate_a_prompt_invoking_a_specific_security_copilot_skill')?['sessionId']",
                                     "SkillName":  "LookupDataFromDefender365Hunting"
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -192,6 +192,29 @@
                                 }
                             }
                         },
+                        "Send_an_email_(V2)":  {
+                            "runAfter":  {
+                                "Summarize_and_share_phishing_certainty_":  [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type":  "ApiConnection",
+                            "inputs":  {
+                                "body":  {
+                                    "Body":  "\u003cp\u003ehttps://medeina.defender.microsoft.com/sessions/@{body('Summarize_and_share_phishing_certainty_')?['sessionId']}\u003c/p\u003e",
+                                    "Importance":  "High",
+                                    "Subject":  "User reported Phshing Copilot Report",
+                                    "To":  "yanivsh@microsoft.com"
+                                },
+                                "host":  {
+                                    "connection":  {
+                                        "name":  "@parameters('$connections')['office365']['connectionId']"
+                                    }
+                                },
+                                "method":  "post",
+                                "path":  "/v2/Mail"
+                            }
+                        },
                         "Summarize_and_share_phishing_certainty_":  {
                             "runAfter":  {
                                 "Evaluations_-_Evaluate_a_prompt_invoking_a_specific_security_copilot_skill_2":  [
@@ -201,11 +224,12 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "Base on this Email investigation, summarize this investigation with all my investigation steps and the evidence and let me know if this is a phshing email, also share certainty percentage"
+                                    "PromptContent":  "Base on the above email investigation, summarize this investigation with all the investigation steps that taken during this session share also supported evidence and let me know if this is a phshing email, also share certainty percentage",
+                                    "SessionId":  "@body('Evaluations_-_Evaluate_a_prompt_invoking_a_specific_security_copilot_skill_2')?['sessionId']"
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -221,11 +245,11 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "/AskGPT  Can you triage this email and point out what you find suspicious? @{body('Parse_JSON')?['body']}"
+                                    "PromptContent":  "/AskGPT  Can you triage this email and point out what you find suspicious? @{body('Parse_JSON')?['body']}. this url https://security.microsoft.com/userSubmissionsReportMessage is internal url, dont incluce it in the analsys. in your triage Investigate the Message-ID for any inconsistencies or signs of spoofing."
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -241,12 +265,12 @@
                             "type":  "ApiConnection",
                             "inputs":  {
                                 "body":  {
-                                    "PromptContent":  "Please list for me all the technical indicators within the email that should be investigated.",
+                                    "PromptContent":  "Please list for me all the technical indicators within the email that should be investigated. this url https://security.microsoft.com/userSubmissionsReportMessage is internal url, dont incluce it in the analsys ",
                                     "SessionId":  "@body('Triage_this_email')?['sessionId']"
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -267,7 +291,7 @@
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -288,7 +312,7 @@
                                 },
                                 "host":  {
                                     "connection":  {
-                                        "name":  "@parameters('$connections')['securitycopilot']['connectionId']"
+                                        "name":  "@parameters('$connections')['securitycopilot_1']['connectionId']"
                                     }
                                 },
                                 "method":  "post",
@@ -307,7 +331,7 @@
                                 "connectionName":  "[variables('Office365ConnectionName')]",
                                 "id":  "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/Office365')]"
                             },
-                            "securitycopilot":  {
+                            "securitycopilot_1":  {
                                 "connectionId":  "[resourceId('Microsoft.Web/connections', variables('SecuritycopilotConnectionName'))]",
                                 "connectionName":  "[variables('SecuritycopilotConnectionName')]",
                                 "id":  "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/Securitycopilot')]"
